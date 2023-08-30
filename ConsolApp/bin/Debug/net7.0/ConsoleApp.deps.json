@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "ConsoleApp/1.0.0": {
+        "dependencies": {
+          "FileFunctions": "1.0.0",
+          "PersonLibrary": "1.0.0"
+        },
+        "runtime": {
+          "ConsoleApp.dll": {}
+        }
+      },
+      "FileFunctions/1.0.0": {
+        "dependencies": {
+          "PersonLibrary": "1.0.0"
+        },
+        "runtime": {
+          "FileFunctions.dll": {}
+        }
+      },
+      "PersonLibrary/1.0.0": {
+        "runtime": {
+          "PersonLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConsoleApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FileFunctions/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PersonLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

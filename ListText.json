@@ -1,0 +1,71 @@
+[
+  {
+    "Id": 1,
+    "Fio": {
+      "Surname": "Фамилия",
+      "Name": "Имя",
+      "Patron": "Отчество"
+    },
+    "Curriculum": {
+      "Faculty": "Факультет",
+      "Specialty": "Специальность",
+      "Course": "Курс",
+      "Group": "Группа"
+    },
+    "Address": {
+      "City": "Город",
+      "PstIndex": "Почтовый индекс",
+      "Street": "Улица"
+    },
+    "Contacts": {
+      "Phone": "Телефон",
+      "Mail": "Адрес почты"
+    }
+  },
+  {
+    "Id": 2,
+    "Fio": {
+      "Surname": "Петров",
+      "Name": "Денис",
+      "Patron": "Олегович"
+    },
+    "Curriculum": {
+      "Faculty": "Юриспруденции",
+      "Specialty": "Юрист",
+      "Course": "3",
+      "Group": "20ЮР11.1"
+    },
+    "Address": {
+      "City": "Самара",
+      "PstIndex": "315003",
+      "Street": "Ленина"
+    },
+    "Contacts": {
+      "Phone": "89991234021",
+      "Mail": "petrovden@mail.ru"
+    }
+  },
+  {
+    "Id": 3,
+    "Fio": {
+      "Surname": "Шолох",
+      "Name": "Владислав",
+      "Patron": "Юрьевич"
+    },
+    "Curriculum": {
+      "Faculty": "Магический",
+      "Specialty": "Колдун-чернокнижник",
+      "Course": "1",
+      "Group": "23КОЛ11.2"
+    },
+    "Address": {
+      "City": "Лондон",
+      "PstIndex": "400115",
+      "Street": "Нижняя"
+    },
+    "Contacts": {
+      "Phone": "84456513214",
+      "Mail": "sholohov@mail.ru"
+    }
+  }
+]

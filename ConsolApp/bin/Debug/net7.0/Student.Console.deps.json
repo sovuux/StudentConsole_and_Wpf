@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Student.Console/1.0.0": {
+        "dependencies": {
+          "Sudent.Data": "1.0.0",
+          "Sudent.Json": "1.0.0"
+        },
+        "runtime": {
+          "Student.Console.dll": {}
+        }
+      },
+      "Sudent.Data/1.0.0": {
+        "runtime": {
+          "Sudent.Data.dll": {}
+        }
+      },
+      "Sudent.Json/1.0.0": {
+        "dependencies": {
+          "Sudent.Data": "1.0.0"
+        },
+        "runtime": {
+          "Sudent.Json.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Student.Console/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Sudent.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Sudent.Json/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
