@@ -22,3 +22,15 @@ C:\Users\Максим\Desktop\3\PersonLib\obj\Debug\net7.0\Sudent.Data.dll
 C:\Users\Максим\Desktop\3\PersonLib\obj\Debug\net7.0\refint\Sudent.Data.dll
 C:\Users\Максим\Desktop\3\PersonLib\obj\Debug\net7.0\Sudent.Data.pdb
 C:\Users\Максим\Desktop\3\PersonLib\obj\Debug\net7.0\ref\Sudent.Data.dll
+C:\Users\Максим\Documents\GitHub\exercise1\PersonLib\bin\Debug\net7.0\Sudent.Data.deps.json
+C:\Users\Максим\Documents\GitHub\exercise1\PersonLib\bin\Debug\net7.0\Sudent.Data.dll
+C:\Users\Максим\Documents\GitHub\exercise1\PersonLib\bin\Debug\net7.0\Sudent.Data.pdb
+C:\Users\Максим\Documents\GitHub\exercise1\PersonLib\obj\Debug\net7.0\Sudent.Data.csproj.AssemblyReference.cache
+C:\Users\Максим\Documents\GitHub\exercise1\PersonLib\obj\Debug\net7.0\Sudent.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Максим\Documents\GitHub\exercise1\PersonLib\obj\Debug\net7.0\Sudent.Data.AssemblyInfoInputs.cache
+C:\Users\Максим\Documents\GitHub\exercise1\PersonLib\obj\Debug\net7.0\Sudent.Data.AssemblyInfo.cs
+C:\Users\Максим\Documents\GitHub\exercise1\PersonLib\obj\Debug\net7.0\Sudent.Data.csproj.CoreCompileInputs.cache
+C:\Users\Максим\Documents\GitHub\exercise1\PersonLib\obj\Debug\net7.0\Sudent.Data.dll
+C:\Users\Максим\Documents\GitHub\exercise1\PersonLib\obj\Debug\net7.0\refint\Sudent.Data.dll
+C:\Users\Максим\Documents\GitHub\exercise1\PersonLib\obj\Debug\net7.0\Sudent.Data.pdb
+C:\Users\Максим\Documents\GitHub\exercise1\PersonLib\obj\Debug\net7.0\ref\Sudent.Data.dll

@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PersonLib\Sudent.Data.csproj" />
-    <ProjectReference Include="..\PrsnLib\Sudent.Data.csproj" />
   </ItemGroup>
 
 </Project>

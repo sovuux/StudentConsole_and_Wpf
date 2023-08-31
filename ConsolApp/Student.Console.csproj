@@ -8,10 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FileFunc\Sudent.Json.csproj" />
     <ProjectReference Include="..\JsonLib\Sudent.Json.csproj" />
     <ProjectReference Include="..\PersonLib\Sudent.Data.csproj" />
-    <ProjectReference Include="..\PrsnLib\Sudent.Data.csproj" />
   </ItemGroup>
 
 </Project>

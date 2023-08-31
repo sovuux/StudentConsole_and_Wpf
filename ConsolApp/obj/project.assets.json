@@ -52,11 +52,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Максим\\Desktop\\3\\ConsolApp\\Student.Console.csproj",
+      "projectUniqueName": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\ConsolApp\\Student.Console.csproj",
       "projectName": "Student.Console",
-      "projectPath": "C:\\Users\\Максим\\Desktop\\3\\ConsolApp\\Student.Console.csproj",
+      "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\ConsolApp\\Student.Console.csproj",
       "packagesPath": "C:\\Users\\Максим\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Максим\\Desktop\\3\\ConsolApp\\obj\\",
+      "outputPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\ConsolApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -77,17 +77,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Максим\\Desktop\\3\\FileFunc\\Sudent.Json.csproj": {
-              "projectPath": "C:\\Users\\Максим\\Desktop\\3\\FileFunc\\Sudent.Json.csproj"
+            "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\JsonLib\\Sudent.Json.csproj": {
+              "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\JsonLib\\Sudent.Json.csproj"
             },
-            "C:\\Users\\Максим\\Desktop\\3\\JsonLib\\Sudent.Json.csproj": {
-              "projectPath": "C:\\Users\\Максим\\Desktop\\3\\JsonLib\\Sudent.Json.csproj"
-            },
-            "C:\\Users\\Максим\\Desktop\\3\\PersonLib\\Sudent.Data.csproj": {
-              "projectPath": "C:\\Users\\Максим\\Desktop\\3\\PersonLib\\Sudent.Data.csproj"
-            },
-            "C:\\Users\\Максим\\Desktop\\3\\PrsnLib\\Sudent.Data.csproj": {
-              "projectPath": "C:\\Users\\Максим\\Desktop\\3\\PrsnLib\\Sudent.Data.csproj"
+            "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\PersonLib\\Sudent.Data.csproj": {
+              "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\PersonLib\\Sudent.Data.csproj"
             }
           }
         }
