@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using PersonLibrary;
-using FileFunctions;
-using ConsoleApp;
+using StudentJson;
+using TableCreate;
 
 namespace program;
 internal class Program
@@ -25,9 +25,9 @@ internal class Program
     static void PrintMenu()
     {
         Console.WriteLine("Введите:\n1) Вывести список (изменить запись)\n2) Добавить запись\n3) Удалить запись\n4) Выйти\n");
-        var menu_counter = Convert.ToChar(Console.ReadLine());
+        var mc = Convert.ToChar(Console.ReadLine());
         Console.Clear();
-        switch (menu_counter)
+        switch (mc)
         {
             case '1':
                 {
@@ -56,7 +56,6 @@ internal class Program
             default:
                 {
                     Console.WriteLine("Ошибка! Не верный символ!");
-                    Thread.Sleep(500);
                     Console.Clear();
                     PrintMenu();
                     break;
@@ -65,13 +64,13 @@ internal class Program
     }
     static void ListText()
     {
-        if (Json.Reader(out List<LibPerson> Persons))
+        if (Json.ReadJson(out List<Student> Persons))
         {
             Console.WindowWidth = 200;
             ListPrint(Persons);
             Console.WriteLine();
             ListEdit(Persons);
-            Json.Writer(Persons);
+            Json.WriteJson(Persons);
             Console.Clear();
             PrintMenu();
         }
@@ -79,13 +78,11 @@ internal class Program
         {
             Console.WriteLine("Не удалось найти файл!");
             Console.WriteLine("...");
-            Console.WriteLine("Созднание нового файла.");
-            Json.CreateJson();
-            Thread.Sleep(1000);
+            Console.WriteLine("Попробуйте заново скачать архив!");
             ListText();
         }
     }
-    static void ListPrint(List<LibPerson> Persons)
+    static void ListPrint(List<Student> Persons)
     {
         int i = 1;
         Console.Clear();
@@ -104,7 +101,7 @@ internal class Program
         Console.WriteLine($"Введите {add}:\n");
         return Console.ReadLine();
     }
-    static void ListEdit(List<LibPerson> persons)
+    static void ListEdit(List<Student> persons)
     {
         Console.WriteLine("\n\nХотите изменить запись?(1 - да, 2 - выход в главное меню)");
         var editor = Console.ReadLine();
@@ -161,27 +158,24 @@ internal class Program
             else
             {
                 Console.WriteLine("Неверно введено число");
-                Thread.Sleep(1200);
                 ListText();
             }
         }
         if (editor == "2")
         {
-            Thread.Sleep(0);
             Console.Clear();
             PrintMenu();
         }
         if (editor != "1" && editor != "2")
         {
             Console.WriteLine("Вы ввели неправильный символ!");
-            Thread.Sleep(1000);
             ListEdit(persons);
         }
     }
 
     static void Add()
     {
-        if (Json.Reader(out List<LibPerson> Persons))
+        if (Json.ReadJson(out List<Student> Persons))
         {
             SetPerson();
             Console.Clear();
@@ -194,9 +188,9 @@ internal class Program
     }
     static void SetPerson()
     {
-        if (Json.Reader(out List<LibPerson> Persons))
+        if (Json.ReadJson(out List<Student> Persons))
         {
-            LibPerson Person = new LibPerson();
+            Student Person = new Student();
             Console.WriteLine("Введите ФИО:\n Имя");
             Person.Fio.Name = Console.ReadLine();
             Console.WriteLine(" Фамилия:");
@@ -223,7 +217,7 @@ internal class Program
             Person.Curriculum.Specialty = Console.ReadLine();
             Console.Clear();
             Persons.Add(Person);
-            Json.Writer(Persons);
+            Json.WriteJson(Persons);
         }
         else
         {
@@ -232,7 +226,7 @@ internal class Program
     }
     static void Delete()
     {
-        if (Json.Reader(out List<LibPerson> Persons))
+        if (Json.ReadJson(out List<Student> Persons))
         {
             ListPrint(Persons);
             Console.WriteLine("\nВведите номер записи, которую необзодимо удалить");
@@ -241,7 +235,7 @@ internal class Program
             {
                 Console.Clear();
                 Persons.RemoveAll(x => Persons.IndexOf(x) == number - 1);
-                Json.Writer(Persons);
+                Json.WriteJson(Persons);
                 PrintMenu();
             }
             else
@@ -254,8 +248,6 @@ internal class Program
         else
         {
             Console.WriteLine("Файл не существует!");
-            Json.CreateJson();
-            Thread.Sleep(1000);
             PrintMenu();
         }
     }

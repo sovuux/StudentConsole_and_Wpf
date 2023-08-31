@@ -8,22 +8,18 @@ using System.Text.Unicode;
 using System.Threading.Tasks;
 using PersonLibrary;
 
-namespace FileFunctions
+namespace StudentJson
 {
     public class Json
     {
         private static string pathTo = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "ListText.json");
-        static public StreamWriter CreateJson()
-        {
-            StreamWriter sw = new StreamWriter(pathTo);
-            return sw;
-        }
-        static public bool Reader(out List<LibPerson> Persons)
+
+        static public bool ReadJson(out List<Student> Persons)
         {
             string flag = File.ReadAllText(pathTo).Trim();
             if (flag != "")
             {
-                Persons = JsonSerializer.Deserialize<List<LibPerson>>(File.ReadAllText(pathTo));
+                Persons = JsonSerializer.Deserialize<List<Student>>(File.ReadAllText(pathTo));
                 return true;
             }
             else
@@ -32,7 +28,7 @@ namespace FileFunctions
                 return false;
             }
         }
-        static public void Writer(List<LibPerson> Persons)
+        static public void WriteJson(List<Student> Persons)
         {
             string jsonString = JsonSerializer.Serialize(Persons, Options());
             File.WriteAllText(pathTo, jsonString);
