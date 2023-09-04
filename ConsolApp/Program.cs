@@ -48,7 +48,6 @@ internal class Program
             case '4':
                 {
                     Console.WriteLine("Выполняется выход из программы...");
-                    Thread.Sleep(850);
                     Console.Clear();
                     System.Environment.Exit(0);
                     break;
