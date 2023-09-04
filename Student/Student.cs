@@ -6,16 +6,16 @@ namespace PersonLibrary
     public class Student
     {
         public int? Id { get; set; }
-        public LibFio? Fio { get; set; }
-        public LibUniInfo? Curriculum { get; set; }
-        public LibAdress? Address { get; set; }
-        public LibContacts? Contacts { get; set; }
+        public StudentFio? Fio { get; set; }
+        public StudentUniInfo? Curriculum { get; set; }
+        public StudentAdress? Address { get; set; }
+        public StudentContacts? Contacts { get; set; }
         public Student()
         {
-            Fio = new LibFio();
-            Curriculum = new LibUniInfo();
-            Address = new LibAdress();
-            Contacts = new LibContacts();
+            Fio = new StudentFio();
+            Curriculum = new StudentUniInfo();
+            Address = new StudentAdress();
+            Contacts = new StudentContacts();
         }
     };
 }

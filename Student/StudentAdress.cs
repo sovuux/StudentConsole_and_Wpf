@@ -3,7 +3,7 @@ using System.Net;
 
 namespace PersonLibrary
 {
-    public class LibAdress
+    public class StudentAdress
     {
         public string? City { get; set; } 
         public string? PstIndex { get; set; } 

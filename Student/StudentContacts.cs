@@ -2,7 +2,7 @@
 
 namespace PersonLibrary
 {
-    public class LibContacts
+    public class StudentContacts
     {
         public string? Phone { get; set; } 
         public string? Mail { get; set; } 

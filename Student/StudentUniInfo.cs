@@ -2,7 +2,7 @@
 
 namespace PersonLibrary
 {
-    public class LibUniInfo
+    public class StudentUniInfo
     {
         public string? Faculty { get; set; } 
         public string? Specialty { get; set; } 
