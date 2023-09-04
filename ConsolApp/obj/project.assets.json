@@ -30,8 +30,8 @@
   "libraries": {
     "Sudent.Data/1.0.0": {
       "type": "project",
-      "path": "../PersonLib/Sudent.Data.csproj",
-      "msbuildProject": "../PersonLib/Sudent.Data.csproj"
+      "path": "../Student/Sudent.Data.csproj",
+      "msbuildProject": "../Student/Sudent.Data.csproj"
     },
     "Sudent.Json/1.0.0": {
       "type": "project",
@@ -77,11 +77,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\PersonLib\\Sudent.Data.csproj": {
-              "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\PersonLib\\Sudent.Data.csproj"
-            },
             "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Sudent.Json.csproj": {
               "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Sudent.Json.csproj"
+            },
+            "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Sudent.Data.csproj": {
+              "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Sudent.Data.csproj"
             }
           }
         }
