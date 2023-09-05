@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StudentRead\Sudent.Json.csproj" />
+	  <ProjectReference Include="..\StudentRead\Sudent.Json.csproj" />
     <ProjectReference Include="..\Student\Sudent.Data.csproj" />
   </ItemGroup>
 
