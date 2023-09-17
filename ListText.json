@@ -2,29 +2,6 @@
   {
     "Id": 1,
     "Fio": {
-      "Surname": "Фамилия",
-      "Name": "Имя",
-      "Patron": "Отчество"
-    },
-    "Curriculum": {
-      "Faculty": "Факультет",
-      "Specialty": "Специальность",
-      "Course": "Курс",
-      "Group": "Группа"
-    },
-    "Address": {
-      "City": "Город",
-      "PstIndex": "Почтовый индекс",
-      "Street": "Улица"
-    },
-    "Contacts": {
-      "Phone": "Телефон",
-      "Mail": "Адрес почты"
-    }
-  },
-  {
-    "Id": 2,
-    "Fio": {
       "Surname": "Петров",
       "Name": "Денис",
       "Patron": "Олегович"
@@ -46,7 +23,7 @@
     }
   },
   {
-    "Id": 3,
+    "Id": 2,
     "Fio": {
       "Surname": "Шолох",
       "Name": "Владислав",
@@ -66,6 +43,29 @@
     "Contacts": {
       "Phone": "84456513214",
       "Mail": "sholohov@mail.ru"
+    }
+  },
+  {
+    "Id": 3,
+    "Fio": {
+      "Surname": "Денисов",
+      "Name": "Роман",
+      "Patron": "Александрович"
+    },
+    "Curriculum": {
+      "Faculty": "СПО",
+      "Specialty": "ИСИП",
+      "Course": "1",
+      "Group": null
+    },
+    "Address": {
+      "City": "Ставрополь",
+      "PstIndex": "355003",
+      "Street": "Ленина"
+    },
+    "Contacts": {
+      "Phone": "89286314512",
+      "Mail": "DRa@mail.ru"
     }
   }
 ]
