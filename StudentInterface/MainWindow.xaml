@@ -5,27 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentInterface"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="950">
+        Title="MainWindow" Height="600" Width="1250">
     <Grid>
-        <DataGrid x:Name="DataGrid" IsReadOnly="True" FontSize="15px" Margin="5" AutoGenerateColumns="False" ItemsSource="{Binding PersonLibrary}">
+        <DataGrid x:Name="DataGrid" FontSize="15px" Margin="5" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns >
                 <DataGridTextColumn x:Name="NumID" Header="ID"  Binding="{Binding  Id}" />
-                <DataGridTextColumn Header="Фамилия" Binding="{Binding StudentFio.Surname}" />
-                <DataGridTextColumn Header="Имя" Binding="{Binding  StudentFio.Name}" />
-                <DataGridTextColumn Header="Отчество" Binding="{Binding StudentFio.Patron}" />
-                <DataGridTextColumn Header="Город" Binding="{Binding StudentAdress.City}"/>
-                <DataGridTextColumn Header="Почтовый индекс" Binding="{Binding StudentAdress.PstIndex}"/>
-                <DataGridTextColumn Header="Улица" Binding="{Binding StudentAdress.Street}"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding StudentContacts.Mail}"/>
-                <DataGridTextColumn Header="Телефон" Binding="{Binding StudentContacts.Phone}"/>
-                <DataGridTextColumn Header="Факультет" Binding="{Binding StudentUniInfo.Faculty}"/>
-                <DataGridTextColumn Header="Специальность" Binding="{Binding StudentUniInfo.Specialty}"/>
-                <DataGridTextColumn Header="Курс" Binding="{Binding StudentUniInfo.Course}"/>
-                <DataGridTextColumn Header="Группа" Binding="{Binding StudentUniInfo.Group}"/>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding Fio.Surname}" />
+                <DataGridTextColumn Header="Имя" Binding="{Binding Fio.Name}" />
+                <DataGridTextColumn Header="Отчество" Binding="{Binding Fio.Patron}" />
+                <DataGridTextColumn Header="Город" Binding="{Binding Address.City}"/>
+                <DataGridTextColumn Header="Почтовый индекс" Binding="{Binding Address.PstIndex}"/>
+                <DataGridTextColumn Header="Улица" Binding="{Binding Address.Street}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Contacts.Mail}"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding Contacts.Phone}"/>
+                <DataGridTextColumn Header="Факультет" Binding="{Binding Curriculum.Faculty}"/>
+                <DataGridTextColumn Header="Специальность" Binding="{Binding Curriculum.Specialty}"/>
+                <DataGridTextColumn Header="Курс" Binding="{Binding Curriculum.Course}"/>
+                <DataGridTextColumn Header="Группа" Binding="{Binding Curriculum.Group}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Удалить" HorizontalAlignment="Left" Margin="0,517,0,0" VerticalAlignment="Top" Height="44" Width="313" FontSize="18" Click="Delete_Click"/>
-        <Button Content="Добавить" HorizontalAlignment="Left" Margin="637,516,0,0" VerticalAlignment="Top" Height="46" Width="313" FontSize="18" Click="Add_Click"/>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="937,517,0,0" VerticalAlignment="Top" Height="46" Width="313" FontSize="18" Click="Add_Click"/>
         <Label Content="Введите ID записи:" HorizontalAlignment="Left" Margin="0,486,0,0" VerticalAlignment="Top" Width="131" FontSize="14"/>
         <TextBox x:Name="LineId" HorizontalAlignment="Left" Margin="136,486,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="177" Height="26"/>
     </Grid>
