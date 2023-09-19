@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
 using PersonLibrary;
 using Student.Interface;
 using StudentJson;
@@ -29,6 +30,7 @@ namespace StudentInterface
             Json.ReadJson(out List<PersonLibrary.Student> Persons);
             AllignId(Persons);
             DataGrid.ItemsSource = Persons;
+            
         }
 
        

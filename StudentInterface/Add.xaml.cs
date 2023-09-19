@@ -44,7 +44,8 @@ namespace Student.Interface
                 student.Contacts.Phone = number.Text;
                 student.Curriculum.Specialty= specialty.Text;
                 student.Curriculum.Faculty = faculty.Text;
-                student.Curriculum.Course = course.Text;
+                student.Curriculum.Course = course.Text;    
+                student.Curriculum.Group = group.Text;
                 students.Add(student);
                 Json.WriteJson(students);
                 MainWindow mainWindow = new MainWindow();

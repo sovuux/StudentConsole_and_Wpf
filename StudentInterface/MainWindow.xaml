@@ -7,21 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="950">
     <Grid>
-        <DataGrid x:Name="DataGrid" IsReadOnly="True" FontSize="15px" Margin="0,0,-16,0" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="NumID" Header="ID"  Binding="{Binding Id}" />
-                <DataGridTextColumn Header="Фамилия" Binding="{Binding Surname}" />
-                <DataGridTextColumn Header="Имя" Binding="{Binding Name}" />
-                <DataGridTextColumn Header="Отчество" Binding="{Binding Patron}" />
-                <DataGridTextColumn Header="Город" Binding="{Binding City}"/>
-                <DataGridTextColumn Header="Почтовый индекс" Binding="{Binding PstIndex}"/>
-                <DataGridTextColumn Header="Улица" Binding="{Binding Street}"/>
-                <DataGridTextColumn Header="Email" Binding="{Binding Mail}"/>
-                <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}"/>
-                <DataGridTextColumn Header="Факультет" Binding="{Binding Faculty}"/>
-                <DataGridTextColumn Header="Специальность" Binding="{Binding Specialty}"/>
-                <DataGridTextColumn Header="Курс" Binding="{Binding Course}"/>
-                <DataGridTextColumn Header="Группа" Binding="{Binding Group}"/>
+        <DataGrid x:Name="DataGrid" IsReadOnly="True" FontSize="15px" Margin="5" AutoGenerateColumns="False" ItemsSource="{Binding PersonLibrary}">
+            <DataGrid.Columns >
+                <DataGridTextColumn x:Name="NumID" Header="ID"  Binding="{Binding  Id}" />
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding StudentFio.Surname}" />
+                <DataGridTextColumn Header="Имя" Binding="{Binding  StudentFio.Name}" />
+                <DataGridTextColumn Header="Отчество" Binding="{Binding StudentFio.Patron}" />
+                <DataGridTextColumn Header="Город" Binding="{Binding StudentAdress.City}"/>
+                <DataGridTextColumn Header="Почтовый индекс" Binding="{Binding StudentAdress.PstIndex}"/>
+                <DataGridTextColumn Header="Улица" Binding="{Binding StudentAdress.Street}"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding StudentContacts.Mail}"/>
+                <DataGridTextColumn Header="Телефон" Binding="{Binding StudentContacts.Phone}"/>
+                <DataGridTextColumn Header="Факультет" Binding="{Binding StudentUniInfo.Faculty}"/>
+                <DataGridTextColumn Header="Специальность" Binding="{Binding StudentUniInfo.Specialty}"/>
+                <DataGridTextColumn Header="Курс" Binding="{Binding StudentUniInfo.Course}"/>
+                <DataGridTextColumn Header="Группа" Binding="{Binding StudentUniInfo.Group}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Удалить" HorizontalAlignment="Left" Margin="0,517,0,0" VerticalAlignment="Top" Height="44" Width="313" FontSize="18" Click="Delete_Click"/>
