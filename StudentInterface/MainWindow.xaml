@@ -30,7 +30,8 @@
         </DataGrid>
         <Button x:Name="but_del" Content="Удалить" HorizontalAlignment="Left" Margin="0,517,0,0" VerticalAlignment="Top" Height="44" Width="313" FontSize="18" Click="Delete_Click" KeyDown="Button_KeyDown"/>
         <Button Content="Добавить" HorizontalAlignment="Left" Margin="937,517,0,0" VerticalAlignment="Top" Height="46" Width="313" FontSize="18" Click="Add_Click" Grid.ColumnSpan="2"/>
-        <Label Content="Введите ID записи:" HorizontalAlignment="Left" Margin="0,486,0,0" VerticalAlignment="Top" Width="131" FontSize="14"/>
+        <Label Content="Введите ID записи :" HorizontalAlignment="Left" Margin="0,486,0,0" VerticalAlignment="Top" Width="156" FontSize="14"/>
         <TextBox x:Name="LineId" HorizontalAlignment="Left" Margin="136,486,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="177" Height="26"/>
+        <Button x:Name="but_Exit" Content="Выйти" HorizontalAlignment="Left" Margin="468,517,0,0" VerticalAlignment="Top" Height="44" Width="314" FontSize="18" Click="but_Ex" KeyDown="Button_KeyDown"/>
     </Grid>
 </Window>
