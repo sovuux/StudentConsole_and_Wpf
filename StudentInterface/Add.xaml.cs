@@ -46,6 +46,7 @@ namespace Student.Interface
                 student.Curriculum.Faculty = faculty.Text;
                 student.Curriculum.Course = course.Text;    
                 student.Curriculum.Group = group.Text;
+                AllignId(students);
                 students.Add(student);
                 Json.WriteJson(students);
                 MainWindow mainWindow = new MainWindow();
@@ -61,6 +62,15 @@ namespace Student.Interface
         private void close_but(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        public void AllignId(List<PersonLibrary.Student> Students)
+        {
+            int[] capId = new int[Students.Count];
+            for (int i = 0; i < Students.Count; i++)
+            {
+                capId[i] = i;
+                Students[i].Id = i + 1;
+            }
         }
     }
 }

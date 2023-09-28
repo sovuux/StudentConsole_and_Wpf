@@ -18,6 +18,9 @@ using PersonLibrary;
 using Student.Interface;
 using StudentJson;
 using System.Windows.Controls.Primitives;
+using System.IO;
+using System.Windows.Input;
+using System.Collections.ObjectModel;
 
 namespace StudentInterface
 {
@@ -46,44 +49,41 @@ namespace StudentInterface
             }
         }
         void Delete_Click(object sender, RoutedEventArgs e)
-        {   
-            
-            Json.ReadJson(out List<PersonLibrary.Student> Students);
-            if (LineId.Text == "")
+        {    
+            if (LineId.Text != null) 
+            { 
+                Json.ReadJson(out List<PersonLibrary.Student> Students);
+               AllignId(Students);
+               if (int.TryParse(LineId.Text, out int number))
+               {
+                  Students.RemoveAll(x => Students.IndexOf(x) == Convert.ToInt32(LineId.Text) - 1);
+                   AllignId(Students);
+                   Json.WriteJson(Students);
+                   DataGrid.ItemsSource = Students;
+                   LineId.Text = null;
+                   MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+               }
+                //else
+                //{
+                 //   LineId.Text = string.Empty;
+                 //   MessageBox.Show("Введите номер записи", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
+               // }
+            }
+            if (LineId.Text ==  "") 
             {
-                    try
+                if (DataGrid.SelectedItem != null)
+                {
+                    PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
+                    Json.ReadJson(out List<PersonLibrary.Student> Students);
+                    if (Students != null)
                     {
-                        string selRow = DataGrid.SelectedItems.ToString();
-                        if (int.TryParse(selRow, out int number))
-                        {
-                        Students.RemoveAll(x => Students.IndexOf(x) == Convert.ToInt32(selRow) - 1);
-                        }
+                        Students.RemoveAll(student => student.Id == selectedStudent.Id);
                         AllignId(Students);
                         Json.WriteJson(Students);
-                        DataGrid.ItemsSource = Students;
+                        DataGrid.ItemsSource= Students;
                         MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message.ToString());
-                    }
-            }
-            else if (LineId.Text != null)
-            {
-                AllignId(Students);
-                if (int.TryParse(LineId.Text, out int number))
-                {
-                    Students.RemoveAll(x => Students.IndexOf(x) == Convert.ToInt32(LineId.Text) - 1);
                 }
-                else
-                {
-                    LineId.Text = string.Empty;
-                    MessageBox.Show("Введите номер записи", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                AllignId(Students);
-                Json.WriteJson(Students);
-                DataGrid.ItemsSource = Students;
-                MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
@@ -94,10 +94,29 @@ namespace StudentInterface
             this.Close();
 
         }
-
         private void Button_KeyDown(object sender, KeyEventArgs e)
-        {
+        {   
+            if (e.Key == Key.Delete)
+            {
+                if (DataGrid.SelectedItem != null)
+                {
+                    PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
+                    Json.ReadJson(out List<PersonLibrary.Student> Students);
+                    if (Students != null)
+                    {
+                        Students.RemoveAll(student => student.Id == selectedStudent.Id);
+                        Json.WriteJson(Students);
+                        DataGrid.ItemsSource = Students;
+                        MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }
+            }
+            
+        }
 
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            
         }
     }
     
