@@ -49,10 +49,10 @@ namespace StudentInterface
             }
         }
         void Delete_Click(object sender, RoutedEventArgs e)
-        {    
+        {
+            Json.ReadJson(out List<PersonLibrary.Student> Students);
             if (LineId.Text != null) 
             { 
-                Json.ReadJson(out List<PersonLibrary.Student> Students);
                AllignId(Students);
                if (int.TryParse(LineId.Text, out int number))
                {
@@ -74,7 +74,6 @@ namespace StudentInterface
                 if (DataGrid.SelectedItem != null)
                 {
                     PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
-                    Json.ReadJson(out List<PersonLibrary.Student> Students);
                     if (Students != null)
                     {
                         Students.RemoveAll(student => student.Id == selectedStudent.Id);
