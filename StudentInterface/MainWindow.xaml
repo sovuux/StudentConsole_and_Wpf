@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StudentInterface"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1250" Closing="Window_Closing">
+        Title="StudentInterface" Height="600" Width="1250" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1103*"/>
