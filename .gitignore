@@ -69,5 +69,6 @@ bld/
 *.pidb
 *.svclog
 *.scc
+*.cache
 
 /JsonLib/obj
