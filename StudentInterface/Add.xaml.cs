@@ -61,6 +61,8 @@ namespace Student.Interface
         }
         private void close_but(object sender, RoutedEventArgs e)
         {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
         public void AllignId(List<PersonLibrary.Student> Students)

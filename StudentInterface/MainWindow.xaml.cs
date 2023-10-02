@@ -50,42 +50,24 @@ namespace StudentInterface
         }
         void Delete_Click(object sender, RoutedEventArgs e)
         {
-            if (LineId.Text == "" && DataGrid.SelectedItem == null)
-            {
-                MessageBox.Show("Введите ID записи или выберите строку(и) для удаления", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            }
-            else { 
+           if (DataGrid.SelectedItem != null)
+           {            
                 Json.ReadJson(out List<PersonLibrary.Student> Students);
-                if (LineId.Text != null) 
-                { 
+                PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
+                if (Students != null)
+                {
+                Students.RemoveAll(student => student.Id == selectedStudent.Id);
                 AllignId(Students);
-                if (int.TryParse(LineId.Text, out int number))
-                {
-                    Students.RemoveAll(x => Students.IndexOf(x) == Convert.ToInt32(LineId.Text) - 1);
-                    AllignId(Students);
-                    Json.WriteJson(Students);
-                    DataGrid.ItemsSource = Students;
-                    LineId.Text = null;
-                    MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                Json.WriteJson(Students);
+                DataGrid.ItemsSource = Students;
+                MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                }
-                if (LineId.Text ==  "") 
-                {
-                    if (DataGrid.SelectedItem != null)
-                    {
-                        PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
-                        if (Students != null)
-                        {
-                            Students.RemoveAll(student => student.Id == selectedStudent.Id);
-                            AllignId(Students);
-                            Json.WriteJson(Students);
-                            DataGrid.ItemsSource = Students;
-                            MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-                        }
-                    }
-                }
-            }
+           }
+           else
+            {
+                MessageBox.Show("Выберите строку(и) для удаления", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Exclamation);
 
+            }
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -95,34 +77,30 @@ namespace StudentInterface
             this.Close();
 
         }
-        private void Button_KeyDown(object sender, KeyEventArgs e)
-        {   
-            if (e.Key == Key.Delete)
-            {
-                if (DataGrid.SelectedItem != null)
-                {
-                    PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
-                    Json.ReadJson(out List<PersonLibrary.Student> Students);
-                    if (Students != null)
-                    {
-                        Students.RemoveAll(student => student.Id == selectedStudent.Id);
-                        Json.WriteJson(Students);
-                        DataGrid.ItemsSource = Students;
-                        MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-                    }
-                }
-            }
-            
-        }
-
-        private void Window_Closing(object sender, CancelEventArgs e)
-        {
-            
-        }
-
         private void but_Ex(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Data_SaveChanges()
+        {
+            
+        }
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(LineId.Text)) 
+            {
+                int SelectedId = int.Parse(LineId.Text);
+                Json.ReadJson(out List<PersonLibrary.Student> Students);
+                PersonLibrary.Student SelectedStudent = Students.FirstOrDefault(student => student.Id == SelectedId);
+                if (SelectedStudent != null) 
+                { 
+                    Edit form3 = new Edit(SelectedStudent);
+                    form3.Show();
+                    this.Close();
+                }
+            }
         }
     }
     

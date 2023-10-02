@@ -55,8 +55,8 @@
     "Curriculum": {
       "Faculty": "СПО",
       "Specialty": "ИСИП",
-      "Course": "1",
-      "Group": null
+      "Course": "2",
+      "Group": "10"
     },
     "Address": {
       "City": "Ставрополь",
