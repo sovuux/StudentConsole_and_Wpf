@@ -33,7 +33,7 @@ namespace Student.Interface
            
             if (surname.Text != "" && name.Text != "" && patron.Text != "" && city.Text != "" && pstindex.Text != "" && street.Text != "" && email.Text != "" && number.Text != "" && faculty.Text != "" && specialty.Text != "" && course.Text != "" && group.Text != "")
             {
-                Json.ReadJson(out List<PersonLibrary.Student> students);
+                Json.ReadJson(out List<PersonLibrary.Student> Students);
                 student.Fio.Surname = surname.Text;
                 student.Fio.Name = name.Text;
                 student.Fio.Patron = patron.Text;
@@ -46,9 +46,8 @@ namespace Student.Interface
                 student.Curriculum.Faculty = faculty.Text;
                 student.Curriculum.Course = course.Text;    
                 student.Curriculum.Group = group.Text;
-                AllignId(students);
-                students.Add(student);
-                Json.WriteJson(students);
+                Students.Add(student);
+                Data_SaveChanges(Students);
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 this.Close();
@@ -73,6 +72,11 @@ namespace Student.Interface
                 capId[i] = i;
                 Students[i].Id = i + 1;
             }
+        }
+        private void Data_SaveChanges(List<PersonLibrary.Student> Students)
+        {
+            AllignId(Students);
+            Json.WriteJson(Students);
         }
     }
 }

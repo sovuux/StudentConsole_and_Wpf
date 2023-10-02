@@ -51,14 +51,13 @@ namespace StudentInterface
         void Delete_Click(object sender, RoutedEventArgs e)
         {
            if (DataGrid.SelectedItem != null)
-           {            
+           {
                 Json.ReadJson(out List<PersonLibrary.Student> Students);
                 PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
                 if (Students != null)
                 {
                 Students.RemoveAll(student => student.Id == selectedStudent.Id);
-                AllignId(Students);
-                Json.WriteJson(Students);
+                Data_SaveChanges(Students);
                 DataGrid.ItemsSource = Students;
                 MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
@@ -82,9 +81,10 @@ namespace StudentInterface
             this.Close();
         }
 
-        private void Data_SaveChanges()
+        private void Data_SaveChanges(List <PersonLibrary.Student> Students)
         {
-            
+            AllignId(Students);
+            Json.WriteJson(Students);
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
