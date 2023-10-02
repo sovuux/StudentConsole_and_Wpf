@@ -46,7 +46,6 @@ namespace Student.Interface
                 student.Curriculum.Faculty = faculty.Text;
                 student.Curriculum.Course = course.Text;    
                 student.Curriculum.Group = group.Text;
-                Students.Add(student);
                 Data_SaveChanges(Students);
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
@@ -75,6 +74,7 @@ namespace Student.Interface
         }
         private void Data_SaveChanges(List<PersonLibrary.Student> Students)
         {
+            Students.Add(student);
             AllignId(Students);
             Json.WriteJson(Students);
         }

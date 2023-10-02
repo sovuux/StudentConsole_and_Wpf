@@ -58,7 +58,6 @@ namespace StudentInterface
                 {
                 Students.RemoveAll(student => student.Id == selectedStudent.Id);
                 Data_SaveChanges(Students);
-                DataGrid.ItemsSource = Students;
                 MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
            }
@@ -85,6 +84,7 @@ namespace StudentInterface
         {
             AllignId(Students);
             Json.WriteJson(Students);
+            DataGrid.ItemsSource = Students;
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
