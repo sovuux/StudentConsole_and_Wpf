@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Student\Sudent.Data.csproj" />
+    <ProjectReference Include="..\Student\Sudent.Data.csproj" />
   </ItemGroup>
 
 </Project>
