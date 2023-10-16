@@ -29,11 +29,12 @@ namespace StudentInterface
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
         public MainWindow()
         {
             InitializeComponent();
-            LoadData();
+            Json.ReadJson(out List<PersonLibrary.Student> Students);
+            DataGrid.ItemsSource = Students;
 
         }
        
@@ -55,10 +56,7 @@ namespace StudentInterface
                 PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
                 if (Students != null)
                 {
-                    Students.RemoveAll(student => student.Id == selectedStudent.Id);
-                    AllignId(Students);
-                    Json.WriteJson(Students);
-                    DataGrid.ItemsSource = Students;
+                    DeleteData(Students);
                     MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
@@ -68,35 +66,28 @@ namespace StudentInterface
 
             }
         }
-
-        private List<PersonLibrary.Student> LoadData()
+        
+        public void DeleteData(List<PersonLibrary.Student> Students)
         {
-            List<PersonLibrary.Student> students;
-            Json.ReadJson(out students);
-            Json.WriteJson(students);
-            AllignId(students);
-            DataGrid.ItemsSource = students;
-            return students;
+            PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
+            Students.RemoveAll(student => student.Id == selectedStudent.Id);
+            AllignId(Students);
+            Json.WriteJson(Students);
+            DataGrid.ItemsSource = Students;
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
             Add form2 = new Add();
             form2.Show();
-            this.Close();
+            Close();
 
         }
         private void but_Ex(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
 
-        private void Data_SaveChanges(List<PersonLibrary.Student> Students)
-        {
-            AllignId(Students);
-            Json.WriteJson(Students);
-            DataGrid.ItemsSource = Students;
-        }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
@@ -109,7 +100,7 @@ namespace StudentInterface
                 {
                     Edit form3 = new Edit(SelectedStudent);
                     form3.Show();
-                    this.Close();
+                    Close();
                 }
             }
         }

@@ -45,7 +45,7 @@ namespace Student.Interface
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-            this.Close();
+            Close();
         }
 
         private void fin_edit_but_Click(object sender, RoutedEventArgs e)
@@ -73,7 +73,7 @@ namespace Student.Interface
             }
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-            this.Close();
+            Close();
 
         }
     }
