@@ -91,17 +91,16 @@ namespace StudentInterface
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(LineId.Text))
+            if (DataGrid.SelectedItem != null)
             {
-                int SelectedId = int.Parse(LineId.Text);
-                Json.ReadJson(out List<PersonLibrary.Student> Students);
-                PersonLibrary.Student SelectedStudent = Students.FirstOrDefault(student => student.Id == SelectedId);
-                if (SelectedStudent != null)
-                {
-                    Edit form3 = new Edit(SelectedStudent);
-                    form3.Show();
-                    Close();
-                }
+                PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
+                Edit form3 = new Edit(selectedStudent);
+                form3.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Выберите строку для редактирования", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
     }
