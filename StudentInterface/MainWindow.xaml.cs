@@ -56,8 +56,12 @@ namespace StudentInterface
                 PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
                 if (Students != null)
                 {
-                    DeleteData(Students);
-                    MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBoxResult result =  MessageBox.Show($"Вы действительно хотите удалить запись {selectedStudent.Id}?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                    if (result == MessageBoxResult.Yes)
+                    {
+                        DeleteData(Students);
+                        MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
                 }
             }
             else
