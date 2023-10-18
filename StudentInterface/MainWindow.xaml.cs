@@ -33,12 +33,14 @@ namespace StudentInterface
         public MainWindow()
         {
             InitializeComponent();
-            Json.ReadJson(out List<PersonLibrary.Student> Students);
-            DataGrid.ItemsSource = Students;
-
+            LoadData();
         }
        
-
+        void LoadData()
+        {
+            Json.ReadJson(out List<PersonLibrary.Student> Students);
+            DataGrid.ItemsSource = Students;
+        }
         public void AllignId(List<PersonLibrary.Student> Students)
         {
             int[] capId = new int[Students.Count];

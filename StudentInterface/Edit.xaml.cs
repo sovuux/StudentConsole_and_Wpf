@@ -50,31 +50,33 @@ namespace Student.Interface
 
         private void fin_edit_but_Click(object sender, RoutedEventArgs e)
         {
-            c_student.Fio.Surname = surname.Text;
-            c_student.Fio.Name = name.Text;
-            c_student.Fio.Patron = patron.Text;
-            c_student.Address.City = city.Text;
-            c_student.Address.PstIndex = pstindex.Text;
-            c_student.Address.Street = street.Text;
-            c_student.Contacts.Mail = email.Text;
-            c_student.Contacts.Phone = number.Text;
-            c_student.Curriculum.Specialty = specialty.Text;
-            c_student.Curriculum.Faculty = faculty.Text;
-            c_student.Curriculum.Course = course.Text;
-            c_student.Curriculum.Group = group.Text;
-
-            Json.ReadJson(out List<PersonLibrary.Student> students);
-            int index = students.FindIndex(student => student.Id == c_student.Id);
-            if (index != -1)
+            MessageBoxResult result = MessageBox.Show("Вы действиельно хотите изменить студента?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Yes) 
             {
-                students[index] = c_student;
-                Json.WriteJson(students);
-                MessageBox.Show("Изменения сохранены успешно!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                c_student.Fio.Surname = surname.Text;
+                c_student.Fio.Name = name.Text;
+                c_student.Fio.Patron = patron.Text;
+                c_student.Address.City = city.Text;
+                c_student.Address.PstIndex = pstindex.Text;
+                c_student.Address.Street = street.Text;
+                c_student.Contacts.Mail = email.Text;
+                c_student.Contacts.Phone = number.Text;
+                c_student.Curriculum.Specialty = specialty.Text;
+                c_student.Curriculum.Faculty = faculty.Text;
+                c_student.Curriculum.Course = course.Text;
+                c_student.Curriculum.Group = group.Text;
+                Json.ReadJson(out List<PersonLibrary.Student> students);
+                int index = students.FindIndex(student => student.Id == c_student.Id);
+                if (index != -1)
+                {
+                    students[index] = c_student;
+                    Json.WriteJson(students);
+                    MessageBox.Show("Изменения сохранены успешно!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                Close();
             }
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            Close();
-
         }
     }
 }
