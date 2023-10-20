@@ -30,36 +30,32 @@ namespace Student.Interface
 
         private void fin_add_but_Click(object sender, RoutedEventArgs e)
         {
-           
+
             if (surname.Text != "" && name.Text != "" && patron.Text != "" && city.Text != "" && pstindex.Text != "" && street.Text != "" && email.Text != "" && number.Text != "" && faculty.Text != "" && specialty.Text != "" && course.Text != "" && group.Text != "")
             {
-                MessageBoxResult result = MessageBox.Show("Вы действиельно хотите добавить нового студента?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (result == MessageBoxResult.Yes) 
-                {
-                    Json.ReadJson(out List<PersonLibrary.Student> Students);
-                    student.Fio.Surname = surname.Text;
-                    student.Fio.Name = name.Text;
-                    student.Fio.Patron = patron.Text;
-                    student.Address.City = city.Text;
-                    student.Address.PstIndex = pstindex.Text;
-                    student.Address.Street = street.Text;
-                    student.Contacts.Mail = email.Text;
-                    student.Contacts.Phone = number.Text;
-                    student.Curriculum.Specialty = specialty.Text;
-                    student.Curriculum.Faculty = faculty.Text;
-                    student.Curriculum.Course = course.Text;
-                    student.Curriculum.Group = group.Text;
-                    Data_SaveChanges(Students);
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Show();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Вы не заполнили все строки!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+
+                Json.ReadJson(out List<PersonLibrary.Student> Students);
+                student.Fio.Surname = surname.Text;
+                student.Fio.Name = name.Text;
+                student.Fio.Patron = patron.Text;
+                student.Address.City = city.Text;
+                student.Address.PstIndex = pstindex.Text;
+                student.Address.Street = street.Text;
+                student.Contacts.Mail = email.Text;
+                student.Contacts.Phone = number.Text;
+                student.Curriculum.Specialty = specialty.Text;
+                student.Curriculum.Faculty = faculty.Text;
+                student.Curriculum.Course = course.Text;
+                student.Curriculum.Group = group.Text;
+                Data_SaveChanges(Students);
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
             }
-            
+            else
+            {
+                MessageBox.Show("Вы не заполнили все строки!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         private void close_but(object sender, RoutedEventArgs e)
         {
@@ -76,7 +72,7 @@ namespace Student.Interface
                 Students[i].Id = i + 1;
             }
         }
-        private void Data_SaveChanges(List<PersonLibrary.Student> Students)
+        public void Data_SaveChanges(List<PersonLibrary.Student> Students)
         {
             Students.Add(student);
             AllignId(Students);

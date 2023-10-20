@@ -67,5 +67,28 @@
       "Phone": "89286314512",
       "Mail": "DRa@mail.ru"
     }
+  },
+  {
+    "Id": 4,
+    "Fio": {
+      "Surname": "11",
+      "Name": "1111",
+      "Patron": "1111"
+    },
+    "Curriculum": {
+      "Faculty": "111",
+      "Specialty": "111",
+      "Course": "11",
+      "Group": "1111"
+    },
+    "Address": {
+      "City": "111",
+      "PstIndex": "11",
+      "Street": "111"
+    },
+    "Contacts": {
+      "Phone": "1111",
+      "Mail": "111"
+    }
   }
 ]

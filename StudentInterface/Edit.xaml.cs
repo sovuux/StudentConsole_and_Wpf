@@ -50,9 +50,6 @@ namespace Student.Interface
 
         private void fin_edit_but_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Вы действиельно хотите изменить студента?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            if (result == MessageBoxResult.Yes) 
-            {
                 c_student.Fio.Surname = surname.Text;
                 c_student.Fio.Name = name.Text;
                 c_student.Fio.Patron = patron.Text;
@@ -79,5 +76,4 @@ namespace Student.Interface
             }
         }
     }
-}
 
