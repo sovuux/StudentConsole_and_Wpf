@@ -54,17 +54,7 @@ namespace StudentInterface
         {
             if (DataGrid.SelectedItem != null)
             {
-                Json.ReadJson(out List<PersonLibrary.Student> Students);
-                PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
-                if (Students != null)
-                {
-                    MessageBoxResult result =  MessageBox.Show($"Вы действительно хотите удалить запись {selectedStudent.Id}?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                    if (result == MessageBoxResult.Yes)
-                    {
-                        DeleteData(Students);
-                        MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-                    }
-                }
+                DeleteRow();
             }
             else
             {
@@ -73,6 +63,20 @@ namespace StudentInterface
             }
         }
         
+        public void DeleteRow()
+        {
+            Json.ReadJson(out List<PersonLibrary.Student> Students);
+            PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
+            if (Students != null)
+            {
+                MessageBoxResult result = MessageBox.Show($"Вы действительно хотите удалить запись {selectedStudent.Id}?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    DeleteData(Students);
+                    MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+        }
         public void DeleteData(List<PersonLibrary.Student> Students)
         {
             PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
