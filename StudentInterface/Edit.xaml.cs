@@ -22,23 +22,23 @@ namespace Student.Interface
     /// </summary>
     public partial class Edit : Window
     {
-        private PersonLibrary.Student c_student;
+        private PersonLibrary.Student window_Edit_line;
         public Edit(PersonLibrary.Student student)
         {
             InitializeComponent();
-            c_student = student;
-            surname.Text = c_student.Fio.Surname;
-            name.Text = c_student.Fio.Name;
-            patron.Text = c_student.Fio.Patron;
-            city.Text = c_student.Address.City;
-            pstindex.Text = c_student.Address.PstIndex;
-            street.Text = c_student.Address.Street;
-            email.Text = c_student.Contacts.Mail;
-            number.Text = c_student.Contacts.Phone;
-            faculty.Text = c_student.Curriculum.Faculty;
-            specialty.Text = c_student.Curriculum.Specialty;
-            course.Text = c_student.Curriculum.Course;
-            group.Text = c_student.Curriculum.Group;
+            window_Edit_line = student;
+            surname.Text = window_Edit_line.Fio.Surname;
+            name.Text = window_Edit_line.Fio.Name;
+            patron.Text = window_Edit_line.Fio.Patron;
+            city.Text = window_Edit_line.Address.City;
+            pstindex.Text = window_Edit_line.Address.PstIndex;
+            street.Text = window_Edit_line.Address.Street;
+            email.Text = window_Edit_line.Contacts.Mail;
+            number.Text = window_Edit_line.Contacts.Phone;
+            faculty.Text = window_Edit_line.Curriculum.Faculty;
+            specialty.Text = window_Edit_line.Curriculum.Specialty;
+            course.Text = window_Edit_line.Curriculum.Course;
+            group.Text = window_Edit_line.Curriculum.Group;
         }
 
         private void exit_Menu_but_Click(object sender, RoutedEventArgs e)
@@ -50,23 +50,23 @@ namespace Student.Interface
 
         private void fin_edit_but_Click(object sender, RoutedEventArgs e)
         {
-                c_student.Fio.Surname = surname.Text;
-                c_student.Fio.Name = name.Text;
-                c_student.Fio.Patron = patron.Text;
-                c_student.Address.City = city.Text;
-                c_student.Address.PstIndex = pstindex.Text;
-                c_student.Address.Street = street.Text;
-                c_student.Contacts.Mail = email.Text;
-                c_student.Contacts.Phone = number.Text;
-                c_student.Curriculum.Specialty = specialty.Text;
-                c_student.Curriculum.Faculty = faculty.Text;
-                c_student.Curriculum.Course = course.Text;
-                c_student.Curriculum.Group = group.Text;
+                window_Edit_line.Fio.Surname = surname.Text;
+                window_Edit_line.Fio.Name = name.Text;
+                window_Edit_line.Fio.Patron = patron.Text;
+                window_Edit_line.Address.City = city.Text;
+                window_Edit_line.Address.PstIndex = pstindex.Text;
+                window_Edit_line.Address.Street = street.Text;
+                window_Edit_line.Contacts.Mail = email.Text;
+                window_Edit_line.Contacts.Phone = number.Text;
+                window_Edit_line.Curriculum.Specialty = specialty.Text;
+                window_Edit_line.Curriculum.Faculty = faculty.Text;
+                window_Edit_line.Curriculum.Course = course.Text;
+                window_Edit_line.Curriculum.Group = group.Text;
                 Json.ReadJson(out List<PersonLibrary.Student> students);
-                int index = students.FindIndex(student => student.Id == c_student.Id);
+                int index = students.FindIndex(student => student.Id == window_Edit_line.Id);
                 if (index != -1)
                 {
-                    students[index] = c_student;
+                    students[index] = window_Edit_line;
                     Json.WriteJson(students);
                     MessageBox.Show("Изменения сохранены успешно!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
