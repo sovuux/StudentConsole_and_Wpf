@@ -2,47 +2,47 @@
   "version": 3,
   "targets": {
     "net7.0": {
-      "Sudent.Data/1.0.0": {
+      "Student.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "compile": {
-          "bin/placeholder/Sudent.Data.dll": {}
+          "bin/placeholder/Student.Data.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Sudent.Data.dll": {}
+          "bin/placeholder/Student.Data.dll": {}
         }
       },
-      "Sudent.Json/1.0.0": {
+      "Student.Json/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Sudent.Data": "1.0.0"
+          "Student.Data": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Sudent.Json.dll": {}
+          "bin/placeholder/Student.Json.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Sudent.Json.dll": {}
+          "bin/placeholder/Student.Json.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "Sudent.Data/1.0.0": {
+    "Student.Data/1.0.0": {
       "type": "project",
-      "path": "../Student/Sudent.Data.csproj",
-      "msbuildProject": "../Student/Sudent.Data.csproj"
+      "path": "../Student/Student.Data.csproj",
+      "msbuildProject": "../Student/Student.Data.csproj"
     },
-    "Sudent.Json/1.0.0": {
+    "Student.Json/1.0.0": {
       "type": "project",
-      "path": "../StudentRead/Sudent.Json.csproj",
-      "msbuildProject": "../StudentRead/Sudent.Json.csproj"
+      "path": "../StudentRead/Student.Json.csproj",
+      "msbuildProject": "../StudentRead/Student.Json.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
-      "Sudent.Data >= 1.0.0",
-      "Sudent.Json >= 1.0.0"
+      "Student.Data >= 1.0.0",
+      "Student.Json >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -77,11 +77,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Sudent.Json.csproj": {
-              "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Sudent.Json.csproj"
+            "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Student.Json.csproj": {
+              "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Student.Json.csproj"
             },
-            "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Sudent.Data.csproj": {
-              "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Sudent.Data.csproj"
+            "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Student.Data.csproj": {
+              "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Student.Data.csproj"
             }
           }
         }

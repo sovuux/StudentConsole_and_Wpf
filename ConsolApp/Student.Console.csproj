@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-	  <ProjectReference Include="..\StudentRead\Sudent.Json.csproj" />
-    <ProjectReference Include="..\Student\Sudent.Data.csproj" />
+	  <ProjectReference Include="..\StudentRead\Student.Json.csproj" />
+    <ProjectReference Include="..\Student\Student.Data.csproj" />
   </ItemGroup>
 
 </Project>

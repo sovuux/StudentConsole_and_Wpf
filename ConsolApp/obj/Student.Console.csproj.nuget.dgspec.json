@@ -32,11 +32,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Sudent.Json.csproj": {
-                "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Sudent.Json.csproj"
+              "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Student.Json.csproj": {
+                "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Student.Json.csproj"
               },
-              "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Sudent.Data.csproj": {
-                "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Sudent.Data.csproj"
+              "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Student.Data.csproj": {
+                "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Student.Data.csproj"
               }
             }
           }
@@ -70,12 +70,12 @@
         }
       }
     },
-    "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Sudent.Json.csproj": {
+    "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Student.Json.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Sudent.Json.csproj",
-        "projectName": "Sudent.Json",
-        "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Sudent.Json.csproj",
+        "projectUniqueName": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Student.Json.csproj",
+        "projectName": "Student.Json",
+        "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\Student.Json.csproj",
         "packagesPath": "C:\\Users\\Максим\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\StudentRead\\obj\\",
         "projectStyle": "PackageReference",
@@ -98,8 +98,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Sudent.Data.csproj": {
-                "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Sudent.Data.csproj"
+              "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Student.Data.csproj": {
+                "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Student.Data.csproj"
               }
             }
           }
@@ -133,12 +133,12 @@
         }
       }
     },
-    "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Sudent.Data.csproj": {
+    "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Student.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Sudent.Data.csproj",
-        "projectName": "Sudent.Data",
-        "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Sudent.Data.csproj",
+        "projectUniqueName": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Student.Data.csproj",
+        "projectName": "Student.Data",
+        "projectPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\Student.Data.csproj",
         "packagesPath": "C:\\Users\\Максим\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Максим\\Documents\\GitHub\\exercise1\\Student\\obj\\",
         "projectStyle": "PackageReference",

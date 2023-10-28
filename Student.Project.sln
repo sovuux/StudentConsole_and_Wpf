@@ -5,9 +5,9 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Student.Console", "ConsolApp\Student.Console.csproj", "{38BBAFE6-6AD6-450E-87EB-9D57FBA125BF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sudent.Data", "Student\Sudent.Data.csproj", "{DA9833C2-0F6C-420C-9B4A-6C05B5C0BF15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Student.Data", "Student\Student.Data.csproj", "{DA9833C2-0F6C-420C-9B4A-6C05B5C0BF15}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sudent.Json", "StudentRead\Sudent.Json.csproj", "{5CA6791D-846F-436C-BC2D-6BB450F51E11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Student.Json", "StudentRead\Student.Json.csproj", "{5CA6791D-846F-436C-BC2D-6BB450F51E11}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Student.Interface", "StudentInterface\Student.Interface.csproj", "{1B3EC614-A543-4992-BB11-AF64729264DB}"
 EndProject

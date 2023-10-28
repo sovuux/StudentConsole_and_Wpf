@@ -33,7 +33,7 @@
             <Label Content="Группа" FontSize="14px" FontWeight="Bold"/>
             <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="Group"/>
         </StackPanel>
-        <Button x:Name="fin_add_but" Content="Добавить" HorizontalAlignment="Left" Margin="20,774,0,0" VerticalAlignment="Top" Height="41" Width="222" Click="Add_buttton_Click" FontSize="20"/>
-        <Button Content="Выйти" HorizontalAlignment="Left" Margin="270,774,0,0" VerticalAlignment="Top" Height="41" Width="222" Click="Close_button" FontSize="20"/>
+        <Button x:Name="fin_add_but" Content="Добавить" HorizontalAlignment="Left" Margin="20,774,0,0" VerticalAlignment="Top" Height="41" Width="222" Click="AddButtton" FontSize="20"/>
+        <Button Content="Выйти" HorizontalAlignment="Left" Margin="270,774,0,0" VerticalAlignment="Top" Height="41" Width="222" Click="CloseButton" FontSize="20"/>
     </Grid>
 </Window>

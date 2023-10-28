@@ -22,58 +22,62 @@ namespace Student.Interface
     /// </summary>
     public partial class Edit : Window
     {
-        private PersonLibrary.Student Edit_line;
+        private PersonLibrary.Student RowForEdit;
         public Edit(PersonLibrary.Student Student)
         {
             InitializeComponent();
-            Edit_line = Student;
-            Surname.Text = Edit_line.Fio.Surname;
-            Name.Text = Edit_line.Fio.Name;
-            Patron.Text = Edit_line.Fio.Patron;
-            City.Text = Edit_line.Address.City;
-            Pstindex.Text = Edit_line.Address.PstIndex;
-            Street.Text = Edit_line.Address.Street;
-            Email.Text = Edit_line.Contacts.Mail;
-            Number.Text = Edit_line.Contacts.Phone;
-            Faculty.Text = Edit_line.Curriculum.Faculty;
-            Specialty.Text = Edit_line.Curriculum.Specialty;
-            Course.Text = Edit_line.Curriculum.Course;
-            Group.Text = Edit_line.Curriculum.Group;
+            RowForEdit = Student;
+            Surname.Text = RowForEdit.Fio.Surname;
+            Name.Text = RowForEdit.Fio.Name;
+            Patron.Text = RowForEdit.Fio.Patron;
+            City.Text = RowForEdit.Address.City;
+            Pstindex.Text = RowForEdit.Address.PstIndex;
+            Street.Text = RowForEdit.Address.Street;
+            Email.Text = RowForEdit.Contacts.Mail;
+            Number.Text = RowForEdit.Contacts.Phone;
+            Faculty.Text = RowForEdit.Curriculum.Faculty;
+            Specialty.Text = RowForEdit.Curriculum.Specialty;
+            Course.Text = RowForEdit.Curriculum.Course;
+            Group.Text = RowForEdit.Curriculum.Group;
         }
 
-        private void Exit_Menu_but_Click(object sender, RoutedEventArgs e)
+        private void ExitMenuButton(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            ExitMenu();
+        }
+
+        private void EditButton(object sender, RoutedEventArgs e)
+        {
+                RowForEdit.Fio.Surname = Surname.Text;
+                RowForEdit.Fio.Name = Name.Text;
+                RowForEdit.Fio.Patron = Patron.Text;
+                RowForEdit.Address.City = City.Text;
+                RowForEdit.Address.PstIndex = Pstindex.Text;
+                RowForEdit.Address.Street = Street.Text;
+                RowForEdit.Contacts.Mail = Email.Text;
+                RowForEdit.Contacts.Phone = Number.Text;
+                RowForEdit.Curriculum.Specialty = Specialty.Text;
+                RowForEdit.Curriculum.Faculty = Faculty.Text;
+                RowForEdit.Curriculum.Course = Course.Text;
+                RowForEdit.Curriculum.Group = Group.Text;
+                Json.ReadJson(out List<PersonLibrary.Student> Students);
+                int Index = Students.FindIndex(Student => Student.Id == RowForEdit.Id);
+                if (Index != -1)
+                {
+                    Students[Index] = RowForEdit;
+                    Json.WriteJson(Students);
+                    MessageBox.Show("Изменения сохранены успешно!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                ExitMenu();
+        }
+
+        public void ExitMenu()
+        {
+            MainWindow MainWindow = new MainWindow();
+            MainWindow.Show();
             Close();
         }
 
-        private void Edit_but_Click(object sender, RoutedEventArgs e)
-        {
-                Edit_line.Fio.Surname = Surname.Text;
-                Edit_line.Fio.Name = Name.Text;
-                Edit_line.Fio.Patron = Patron.Text;
-                Edit_line.Address.City = City.Text;
-                Edit_line.Address.PstIndex = Pstindex.Text;
-                Edit_line.Address.Street = Street.Text;
-                Edit_line.Contacts.Mail = Email.Text;
-                Edit_line.Contacts.Phone = Number.Text;
-                Edit_line.Curriculum.Specialty = Specialty.Text;
-                Edit_line.Curriculum.Faculty = Faculty.Text;
-                Edit_line.Curriculum.Course = Course.Text;
-                Edit_line.Curriculum.Group = Group.Text;
-                Json.ReadJson(out List<PersonLibrary.Student> students);
-                int index = students.FindIndex(student => student.Id == Edit_line.Id);
-                if (index != -1)
-                {
-                    students[index] = Edit_line;
-                    Json.WriteJson(students);
-                    MessageBox.Show("Изменения сохранены успешно!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                Close();
-            }
-        }
     }
+}
 

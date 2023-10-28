@@ -28,7 +28,7 @@ namespace Student.Interface
             InitializeComponent();
         }
 
-        private void Add_buttton_Click(object sender, RoutedEventArgs e)
+        private void AddButtton(object sender, RoutedEventArgs e)
         {
 
             if (Surname.Text != "" && Name.Text != "" && Patron.Text != "" && City.Text != "" && Pstindex.Text != "" && Street.Text != "" && Email.Text != "" && Number.Text != "" && Faculty.Text != "" && Specialty.Text != "" && Course.Text != "" && Group.Text != "")
@@ -47,36 +47,40 @@ namespace Student.Interface
                 Student.Curriculum.Faculty = Faculty.Text;
                 Student.Curriculum.Course = Course.Text;
                 Student.Curriculum.Group = Group.Text;
-                Data_SaveChanges(Students);
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                this.Close();
+                DataSaveChanges(Students);
+                ExitMenu();
             }
             else
             {
                 MessageBox.Show("Вы не заполнили все строки!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        private void Close_button(object sender, RoutedEventArgs e)
+        private void CloseButton(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            ExitMenu();
         }
         public void AllignId(List<PersonLibrary.Student> Students)
         {
-            int[] stringId = new int[Students.Count];
-            for (int index = 0; index < Students.Count; index++)
+            int[] StringId = new int[Students.Count];
+            for (int Index = 0; Index < Students.Count; Index++)
             {
-                stringId[index] = index;
-                Students[index].Id = index + 1;
+                StringId[Index] = Index;
+                Students[Index].Id = Index + 1;
             }
         }
-        public void Data_SaveChanges(List<PersonLibrary.Student> Students)
+        public void DataSaveChanges(List<PersonLibrary.Student> Students)
         {
             Students.Add(Student);
             AllignId(Students);
             Json.WriteJson(Students);
         }
+
+        public void ExitMenu()
+        {
+            MainWindow MainWindow = new MainWindow();
+            MainWindow.Show();
+            Close();
+        }
+
     }
 }

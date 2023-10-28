@@ -33,8 +33,8 @@
             <Label Content="Группа" FontSize="14px" FontWeight="Bold"/>
             <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="Group"/>
         </StackPanel>
-        <Button x:Name="fin_edit_but" Content="Сохранить изменения" HorizontalAlignment="Left" Margin="20,774,0,0" VerticalAlignment="Top" Height="41" Width="222" FontSize="20" Click="Edit_but_Click"/>
-        <Button x:Name="exit_Menu_but" Content="Выйти" HorizontalAlignment="Left" Margin="277,774,0,0" VerticalAlignment="Top" Height="41" Width="222" FontSize="20" Click="Exit_Menu_but_Click"/>
+        <Button x:Name="fin_edit_but" Content="Сохранить изменения" HorizontalAlignment="Left" Margin="20,774,0,0" VerticalAlignment="Top" Height="41" Width="222" FontSize="20" Click="EditButton"/>
+        <Button x:Name="exit_Menu_but" Content="Выйти" HorizontalAlignment="Left" Margin="277,774,0,0" VerticalAlignment="Top" Height="41" Width="222" FontSize="20" Click="ExitMenuButton"/>
 
     </Grid>
 </Window>
