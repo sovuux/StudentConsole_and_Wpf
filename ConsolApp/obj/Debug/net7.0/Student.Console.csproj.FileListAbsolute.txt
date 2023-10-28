@@ -46,10 +46,6 @@ C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\bin\Debug\net7.0\Stud
 C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\bin\Debug\net7.0\Student.Console.runtimeconfig.json
 C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\bin\Debug\net7.0\Student.Console.dll
 C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\bin\Debug\net7.0\Student.Console.pdb
-C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\bin\Debug\net7.0\Sudent.Data.dll
-C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\bin\Debug\net7.0\Sudent.Json.dll
-C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\bin\Debug\net7.0\Sudent.Json.pdb
-C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\bin\Debug\net7.0\Sudent.Data.pdb
 C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\obj\Debug\net7.0\Student.Console.csproj.AssemblyReference.cache
 C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\obj\Debug\net7.0\Student.Console.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\obj\Debug\net7.0\Student.Console.AssemblyInfoInputs.cache
@@ -58,3 +54,7 @@ C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\obj\Debug\net7.0\Stud
 C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\obj\Debug\net7.0\Student.Console.csproj.CopyComplete
 C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\obj\Debug\net7.0\Student.Console.genruntimeconfig.cache
 C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\obj\Debug\net7.0\ref\Student.Console.dll
+C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\bin\Debug\net7.0\Student.Data.dll
+C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\bin\Debug\net7.0\Student.Json.dll
+C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\bin\Debug\net7.0\Student.Json.pdb
+C:\Users\Максим\Documents\GitHub\exercise1\ConsolApp\bin\Debug\net7.0\Student.Data.pdb
