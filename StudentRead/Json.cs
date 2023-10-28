@@ -16,6 +16,7 @@ namespace StudentJson
 
         static public bool ReadJson(out List<Student> Persons)
         {
+            string flag = File.ReadAllText(pathTo).Trim();
             if (flag != "")
             {
                 Persons = JsonSerializer.Deserialize<List<Student>>(File.ReadAllText(pathTo));
