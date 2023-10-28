@@ -22,51 +22,51 @@ namespace Student.Interface
     /// </summary>
     public partial class Edit : Window
     {
-        private PersonLibrary.Student window_Edit_line;
-        public Edit(PersonLibrary.Student student)
+        private PersonLibrary.Student Edit_line;
+        public Edit(PersonLibrary.Student Student)
         {
             InitializeComponent();
-            window_Edit_line = student;
-            surname.Text = window_Edit_line.Fio.Surname;
-            name.Text = window_Edit_line.Fio.Name;
-            patron.Text = window_Edit_line.Fio.Patron;
-            city.Text = window_Edit_line.Address.City;
-            pstindex.Text = window_Edit_line.Address.PstIndex;
-            street.Text = window_Edit_line.Address.Street;
-            email.Text = window_Edit_line.Contacts.Mail;
-            number.Text = window_Edit_line.Contacts.Phone;
-            faculty.Text = window_Edit_line.Curriculum.Faculty;
-            specialty.Text = window_Edit_line.Curriculum.Specialty;
-            course.Text = window_Edit_line.Curriculum.Course;
-            group.Text = window_Edit_line.Curriculum.Group;
+            Edit_line = Student;
+            Surname.Text = Edit_line.Fio.Surname;
+            Name.Text = Edit_line.Fio.Name;
+            Patron.Text = Edit_line.Fio.Patron;
+            City.Text = Edit_line.Address.City;
+            Pstindex.Text = Edit_line.Address.PstIndex;
+            Street.Text = Edit_line.Address.Street;
+            Email.Text = Edit_line.Contacts.Mail;
+            Number.Text = Edit_line.Contacts.Phone;
+            Faculty.Text = Edit_line.Curriculum.Faculty;
+            Specialty.Text = Edit_line.Curriculum.Specialty;
+            Course.Text = Edit_line.Curriculum.Course;
+            Group.Text = Edit_line.Curriculum.Group;
         }
 
-        private void exit_Menu_but_Click(object sender, RoutedEventArgs e)
+        private void Exit_Menu_but_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             Close();
         }
 
-        private void fin_edit_but_Click(object sender, RoutedEventArgs e)
+        private void Edit_but_Click(object sender, RoutedEventArgs e)
         {
-                window_Edit_line.Fio.Surname = surname.Text;
-                window_Edit_line.Fio.Name = name.Text;
-                window_Edit_line.Fio.Patron = patron.Text;
-                window_Edit_line.Address.City = city.Text;
-                window_Edit_line.Address.PstIndex = pstindex.Text;
-                window_Edit_line.Address.Street = street.Text;
-                window_Edit_line.Contacts.Mail = email.Text;
-                window_Edit_line.Contacts.Phone = number.Text;
-                window_Edit_line.Curriculum.Specialty = specialty.Text;
-                window_Edit_line.Curriculum.Faculty = faculty.Text;
-                window_Edit_line.Curriculum.Course = course.Text;
-                window_Edit_line.Curriculum.Group = group.Text;
+                Edit_line.Fio.Surname = Surname.Text;
+                Edit_line.Fio.Name = Name.Text;
+                Edit_line.Fio.Patron = Patron.Text;
+                Edit_line.Address.City = City.Text;
+                Edit_line.Address.PstIndex = Pstindex.Text;
+                Edit_line.Address.Street = Street.Text;
+                Edit_line.Contacts.Mail = Email.Text;
+                Edit_line.Contacts.Phone = Number.Text;
+                Edit_line.Curriculum.Specialty = Specialty.Text;
+                Edit_line.Curriculum.Faculty = Faculty.Text;
+                Edit_line.Curriculum.Course = Course.Text;
+                Edit_line.Curriculum.Group = Group.Text;
                 Json.ReadJson(out List<PersonLibrary.Student> students);
-                int index = students.FindIndex(student => student.Id == window_Edit_line.Id);
+                int index = students.FindIndex(student => student.Id == Edit_line.Id);
                 if (index != -1)
                 {
-                    students[index] = window_Edit_line;
+                    students[index] = Edit_line;
                     Json.WriteJson(students);
                     MessageBox.Show("Изменения сохранены успешно!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 }

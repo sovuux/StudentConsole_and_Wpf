@@ -22,31 +22,31 @@ namespace Student.Interface
     /// </summary>
     public partial class Add : Window
     {
-        PersonLibrary.Student student = new PersonLibrary.Student();
+        PersonLibrary.Student Student = new PersonLibrary.Student();
         public Add()
         {
             InitializeComponent();
         }
 
-        private void fin_add_but_Click(object sender, RoutedEventArgs e)
+        private void Add_buttton_Click(object sender, RoutedEventArgs e)
         {
 
-            if (surname.Text != "" && name.Text != "" && patron.Text != "" && city.Text != "" && pstindex.Text != "" && street.Text != "" && email.Text != "" && number.Text != "" && faculty.Text != "" && specialty.Text != "" && course.Text != "" && group.Text != "")
+            if (Surname.Text != "" && Name.Text != "" && Patron.Text != "" && City.Text != "" && Pstindex.Text != "" && Street.Text != "" && Email.Text != "" && Number.Text != "" && Faculty.Text != "" && Specialty.Text != "" && Course.Text != "" && Group.Text != "")
             {
 
                 Json.ReadJson(out List<PersonLibrary.Student> Students);
-                student.Fio.Surname = surname.Text;
-                student.Fio.Name = name.Text;
-                student.Fio.Patron = patron.Text;
-                student.Address.City = city.Text;
-                student.Address.PstIndex = pstindex.Text;
-                student.Address.Street = street.Text;
-                student.Contacts.Mail = email.Text;
-                student.Contacts.Phone = number.Text;
-                student.Curriculum.Specialty = specialty.Text;
-                student.Curriculum.Faculty = faculty.Text;
-                student.Curriculum.Course = course.Text;
-                student.Curriculum.Group = group.Text;
+                Student.Fio.Surname = Surname.Text;
+                Student.Fio.Name = Name.Text;
+                Student.Fio.Patron = Patron.Text;
+                Student.Address.City = City.Text;
+                Student.Address.PstIndex = Pstindex.Text;
+                Student.Address.Street = Street.Text;
+                Student.Contacts.Mail = Email.Text;
+                Student.Contacts.Phone = Number.Text;
+                Student.Curriculum.Specialty = Specialty.Text;
+                Student.Curriculum.Faculty = Faculty.Text;
+                Student.Curriculum.Course = Course.Text;
+                Student.Curriculum.Group = Group.Text;
                 Data_SaveChanges(Students);
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
@@ -57,7 +57,7 @@ namespace Student.Interface
                 MessageBox.Show("Вы не заполнили все строки!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-        private void close_but(object sender, RoutedEventArgs e)
+        private void Close_button(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
@@ -65,16 +65,16 @@ namespace Student.Interface
         }
         public void AllignId(List<PersonLibrary.Student> Students)
         {
-            int[] capId = new int[Students.Count];
-            for (int i = 0; i < Students.Count; i++)
+            int[] stringId = new int[Students.Count];
+            for (int index = 0; index < Students.Count; index++)
             {
-                capId[i] = i;
-                Students[i].Id = i + 1;
+                stringId[index] = index;
+                Students[index].Id = index + 1;
             }
         }
         public void Data_SaveChanges(List<PersonLibrary.Student> Students)
         {
-            Students.Add(student);
+            Students.Add(Student);
             AllignId(Students);
             Json.WriteJson(Students);
         }

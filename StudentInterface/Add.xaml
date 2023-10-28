@@ -9,31 +9,31 @@
     <Grid>
         <StackPanel >
             <Label Content="Фамилия" FontSize="14px" FontWeight="Bold"/>
-            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="surname"/>
+            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="Surname"/>
             <Label Content="Имя" FontSize="14px" FontWeight="Bold"/>
-            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="name"/>
+            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="Name"/>
             <Label Content="Отчество" FontSize="14px" FontWeight="Bold"/>
-            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="patron"/>
+            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="Patron"/>
             <Label Content="Город" FontSize="14px" FontWeight="Bold"/>
-            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="city"/>
+            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="City"/>
             <Label Content="Почтовый индекс" FontSize="14px" FontWeight="Bold"/>
-            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="pstindex"/>
+            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="Pstindex"/>
             <Label Content="Улица" FontSize="14px" FontWeight="Bold"/>
-            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="street"/>
+            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="Street"/>
             <Label Content="Email" FontSize="14px" FontWeight="Bold"/>
-            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="email"/>
+            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="Email"/>
             <Label Content="Телефон" FontSize="14px" FontWeight="Bold"/>
-            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="number"/>
+            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="Number"/>
             <Label Content="Факультет" FontSize="14px" FontWeight="Bold"/>
-            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="faculty"/>
+            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="Faculty"/>
             <Label Content="Специальность" FontSize="14px" FontWeight="Bold"/>
-            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="specialty"/>
+            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="Specialty"/>
             <Label Content="Курс" FontSize="14px" FontWeight="Bold"/>
-            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="course"/>
+            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="Course"/>
             <Label Content="Группа" FontSize="14px" FontWeight="Bold"/>
-            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="group"/>
+            <TextBox FontSize="14px" TextWrapping="Wrap" Text="" Width="480" Height="35" BorderThickness="3px" x:Name="Group"/>
         </StackPanel>
-        <Button x:Name="fin_add_but" Content="Добавить" HorizontalAlignment="Left" Margin="20,774,0,0" VerticalAlignment="Top" Height="41" Width="222" Click="fin_add_but_Click" FontSize="20"/>
-        <Button Content="Выйти" HorizontalAlignment="Left" Margin="270,774,0,0" VerticalAlignment="Top" Height="41" Width="222" Click="close_but" FontSize="20"/>
+        <Button x:Name="fin_add_but" Content="Добавить" HorizontalAlignment="Left" Margin="20,774,0,0" VerticalAlignment="Top" Height="41" Width="222" Click="Add_buttton_Click" FontSize="20"/>
+        <Button Content="Выйти" HorizontalAlignment="Left" Margin="270,774,0,0" VerticalAlignment="Top" Height="41" Width="222" Click="Close_button" FontSize="20"/>
     </Grid>
 </Window>

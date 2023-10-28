@@ -43,11 +43,11 @@ namespace StudentInterface
         }
         public void AllignId(List<PersonLibrary.Student> Students)
         {
-            int[] capId = new int[Students.Count];
-            for (int i = 0; i < Students.Count; i++)
+            int[] stringID = new int[Students.Count];
+            for (int index = 0; index < Students.Count; index++)
             {
-                capId[i] = i;
-                Students[i].Id = i + 1;
+                stringID[index] = index;
+                Students[index].Id = index + 1;
             }
         }
         void Delete_Click(object sender, RoutedEventArgs e)
@@ -80,7 +80,7 @@ namespace StudentInterface
         public void DeleteData(List<PersonLibrary.Student> Students)
         {
             PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
-            Students.RemoveAll(student => student.Id == selectedStudent.Id);
+            Students.RemoveAll(Student => Student.Id == selectedStudent.Id);
             AllignId(Students);
             Json.WriteJson(Students);
             DataGrid.ItemsSource = Students;
@@ -88,12 +88,12 @@ namespace StudentInterface
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            Add form2 = new Add();
-            form2.Show();
+            Add form_Add = new Add();
+            form_Add.Show();
             Close();
 
         }
-        private void but_Ex(object sender, RoutedEventArgs e)
+        private void Exit_but(object sender, RoutedEventArgs e)
         {
             Close();
         }
@@ -104,8 +104,8 @@ namespace StudentInterface
             if (DataGrid.SelectedItem != null)
             {
                 PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
-                Edit form3 = new Edit(selectedStudent);
-                form3.Show();
+                Edit form_Edit = new Edit(selectedStudent);
+                form_Edit.Show();
                 Close();
             }
             else
