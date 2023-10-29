@@ -28,7 +28,7 @@ namespace Student.Interface
             InitializeComponent();
         }
 
-        private void AddButtton(object sender, RoutedEventArgs e)
+        private void AddButton(object sender, RoutedEventArgs e)
         {
 
             if (Surname.Text != "" && Name.Text != "" && Patron.Text != "" && City.Text != "" && Pstindex.Text != "" && Street.Text != "" && Email.Text != "" && Number.Text != "" && Faculty.Text != "" && Specialty.Text != "" && Course.Text != "" && Group.Text != "")
@@ -61,11 +61,11 @@ namespace Student.Interface
         }
         public void AllignId(List<PersonLibrary.Student> Students)
         {
-            int[] StringId = new int[Students.Count];
-            for (int Index = 0; Index < Students.Count; Index++)
+            int[] stringId = new int[Students.Count];
+            for (int index = 0; index < Students.Count; index++)
             {
-                StringId[Index] = Index;
-                Students[Index].Id = Index + 1;
+                stringId[index] = index;
+                Students[index].Id = index + 1;
             }
         }
         public void DataSaveChanges(List<PersonLibrary.Student> Students)

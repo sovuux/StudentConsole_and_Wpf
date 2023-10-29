@@ -61,10 +61,10 @@ namespace Student.Interface
                 RowForEdit.Curriculum.Course = Course.Text;
                 RowForEdit.Curriculum.Group = Group.Text;
                 Json.ReadJson(out List<PersonLibrary.Student> Students);
-                int Index = Students.FindIndex(Student => Student.Id == RowForEdit.Id);
-                if (Index != -1)
+                int index = Students.FindIndex(Student => Student.Id == RowForEdit.Id);
+                if (index != -1)
                 {
-                    Students[Index] = RowForEdit;
+                    Students[index] = RowForEdit;
                     Json.WriteJson(Students);
                     MessageBox.Show("Изменения сохранены успешно!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 }

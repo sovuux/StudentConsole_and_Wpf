@@ -43,11 +43,11 @@ namespace StudentInterface
         }
         public void AllignId(List<PersonLibrary.Student> Students)
         {
-            int[] StringID = new int[Students.Count];
-            for (int Index = 0; Index < Students.Count; Index++)
+            int[] stringId = new int[Students.Count];
+            for (int index = 0; index < Students.Count; index++)
             {
-                StringID[Index] = Index;
-                Students[Index].Id = Index + 1;
+                stringId[index] = index;
+                Students[index].Id = index + 1;
             }
         }
         void DeleteButton(object sender, RoutedEventArgs e)
@@ -69,8 +69,8 @@ namespace StudentInterface
             PersonLibrary.Student SelectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
             if (Students != null)
             {
-                MessageBoxResult Result = MessageBox.Show($"Вы действительно хотите удалить запись {SelectedStudent.Id}?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (Result == MessageBoxResult.Yes)
+                MessageBoxResult result = MessageBox.Show($"Вы действительно хотите удалить запись {SelectedStudent.Id}?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
                 {
                     DeleteData(Students);
                     MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -88,8 +88,8 @@ namespace StudentInterface
 
         private void AddButton(object sender, RoutedEventArgs e)
         {
-            Add FormAdd = new Add();
-            FormAdd.Show();
+            Add formAdd = new Add();
+            formAdd.Show();
             Close();
 
         }
@@ -104,8 +104,8 @@ namespace StudentInterface
             if (DataGrid.SelectedItem != null)
             {
                 PersonLibrary.Student SelectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
-                Edit FormEdit = new Edit(SelectedStudent);
-                FormEdit.Show();
+                Edit formEdit = new Edit(SelectedStudent);
+                formEdit.Show();
                 Close();
             }
             else
