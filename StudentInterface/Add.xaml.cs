@@ -22,7 +22,7 @@ namespace Student.Interface
     /// </summary>
     public partial class Add : Window
     {
-        PersonLibrary.Student Student = new PersonLibrary.Student();
+        PersonLibrary.Student student = new PersonLibrary.Student();
         public Add()
         {
             InitializeComponent();
@@ -34,20 +34,20 @@ namespace Student.Interface
             if (Surname.Text != "" && Name.Text != "" && Patron.Text != "" && City.Text != "" && Pstindex.Text != "" && Street.Text != "" && Email.Text != "" && Number.Text != "" && Faculty.Text != "" && Specialty.Text != "" && Course.Text != "" && Group.Text != "")
             {
 
-                Json.ReadJson(out List<PersonLibrary.Student> Students);
-                Student.Fio.Surname = Surname.Text;
-                Student.Fio.Name = Name.Text;
-                Student.Fio.Patron = Patron.Text;
-                Student.Address.City = City.Text;
-                Student.Address.PstIndex = Pstindex.Text;
-                Student.Address.Street = Street.Text;
-                Student.Contacts.Mail = Email.Text;
-                Student.Contacts.Phone = Number.Text;
-                Student.Curriculum.Specialty = Specialty.Text;
-                Student.Curriculum.Faculty = Faculty.Text;
-                Student.Curriculum.Course = Course.Text;
-                Student.Curriculum.Group = Group.Text;
-                DataSaveChanges(Students);
+                Json.ReadJson(out List<PersonLibrary.Student> students);
+                student.Fio.Surname = Surname.Text;
+                student.Fio.Name = Name.Text;
+                student.Fio.Patron = Patron.Text;
+                student.Address.City = City.Text;
+                student.Address.PstIndex = Pstindex.Text;
+                student.Address.Street = Street.Text;
+                student.Contacts.Mail = Email.Text;
+                student.Contacts.Phone = Number.Text;
+                student.Curriculum.Specialty = Specialty.Text;
+                student.Curriculum.Faculty = Faculty.Text;
+                student.Curriculum.Course = Course.Text;
+                student.Curriculum.Group = Group.Text;
+                SaveChangesData(students);
                 ExitMenu();
             }
             else
@@ -59,26 +59,26 @@ namespace Student.Interface
         {
             ExitMenu();
         }
-        public void AllignId(List<PersonLibrary.Student> Students)
+        public void AllignId(List<PersonLibrary.Student> students)
         {
-            int[] stringId = new int[Students.Count];
-            for (int index = 0; index < Students.Count; index++)
+            int[] stringId = new int[students.Count];
+            for (int index = 0; index < students.Count; index++)
             {
                 stringId[index] = index;
-                Students[index].Id = index + 1;
+                students[index].Id = index + 1;
             }
         }
-        public void DataSaveChanges(List<PersonLibrary.Student> Students)
+        public void SaveChangesData(List<PersonLibrary.Student> students)
         {
-            Students.Add(Student);
-            AllignId(Students);
-            Json.WriteJson(Students);
+            students.Add(student);
+            AllignId(students);
+            Json.WriteJson(students);
         }
 
         public void ExitMenu()
         {
-            MainWindow MainWindow = new MainWindow();
-            MainWindow.Show();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             Close();
         }
     }

@@ -23,10 +23,10 @@ namespace Student.Interface
     public partial class Edit : Window
     {
         private PersonLibrary.Student RowForEdit;
-        public Edit(PersonLibrary.Student Student)
+        public Edit(PersonLibrary.Student student)
         {
             InitializeComponent();
-            RowForEdit = Student;
+            RowForEdit = student;
             Surname.Text = RowForEdit.Fio.Surname;
             Name.Text = RowForEdit.Fio.Name;
             Patron.Text = RowForEdit.Fio.Patron;
@@ -60,12 +60,12 @@ namespace Student.Interface
                 RowForEdit.Curriculum.Faculty = Faculty.Text;
                 RowForEdit.Curriculum.Course = Course.Text;
                 RowForEdit.Curriculum.Group = Group.Text;
-                Json.ReadJson(out List<PersonLibrary.Student> Students);
-                int index = Students.FindIndex(Student => Student.Id == RowForEdit.Id);
+                Json.ReadJson(out List<PersonLibrary.Student> students);
+                int index = students.FindIndex(student => student.Id == RowForEdit.Id);
                 if (index != -1)
                 {
-                    Students[index] = RowForEdit;
-                    Json.WriteJson(Students);
+                    students[index] = RowForEdit;
+                    Json.WriteJson(students);
                     MessageBox.Show("Изменения сохранены успешно!", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 ExitMenu();
@@ -73,8 +73,8 @@ namespace Student.Interface
 
         public void ExitMenu()
         {
-            MainWindow MainWindow = new MainWindow();
-            MainWindow.Show();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
             Close();
         }
 

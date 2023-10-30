@@ -38,16 +38,16 @@ namespace StudentInterface
        
         void LoadData()
         {
-            Json.ReadJson(out List<PersonLibrary.Student> Students);
-            DataGrid.ItemsSource = Students;
+            Json.ReadJson(out List<PersonLibrary.Student> students);
+            DataGrid.ItemsSource = students;
         }
-        public void AllignId(List<PersonLibrary.Student> Students)
+        public void AllignId(List<PersonLibrary.Student> students)
         {
-            int[] stringId = new int[Students.Count];
-            for (int index = 0; index < Students.Count; index++)
+            int[] stringId = new int[students.Count];
+            for (int index = 0; index < students.Count; index++)
             {
                 stringId[index] = index;
-                Students[index].Id = index + 1;
+                students[index].Id = index + 1;
             }
         }
         void DeleteButton(object sender, RoutedEventArgs e)
@@ -65,25 +65,25 @@ namespace StudentInterface
         
         public void DeleteRow()
         {
-            Json.ReadJson(out List<PersonLibrary.Student> Students);
-            PersonLibrary.Student SelectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
-            if (Students != null)
+            Json.ReadJson(out List<PersonLibrary.Student> students);
+            PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
+            if (students != null)
             {
-                MessageBoxResult result = MessageBox.Show($"Вы действительно хотите удалить запись {SelectedStudent.Id}?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                MessageBoxResult result = MessageBox.Show($"Вы действительно хотите удалить запись {selectedStudent.Id}?", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result == MessageBoxResult.Yes)
                 {
-                    DeleteData(Students);
+                    DeleteData(students);
                     MessageBox.Show("Запись удалена", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
         }
-        public void DeleteData(List<PersonLibrary.Student> Students)
+        public void DeleteData(List<PersonLibrary.Student> students)
         {
-            PersonLibrary.Student SelectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
-            Students.RemoveAll(Student => Student.Id == SelectedStudent.Id);
-            AllignId(Students);
-            Json.WriteJson(Students);
-            DataGrid.ItemsSource = Students;
+            PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
+            students.RemoveAll(student => student.Id == selectedStudent.Id);
+            AllignId(students);
+            Json.WriteJson(students);
+            DataGrid.ItemsSource = students;
         }
 
         private void AddButton(object sender, RoutedEventArgs e)
@@ -103,8 +103,8 @@ namespace StudentInterface
         {
             if (DataGrid.SelectedItem != null)
             {
-                PersonLibrary.Student SelectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
-                Edit formEdit = new Edit(SelectedStudent);
+                PersonLibrary.Student selectedStudent = (PersonLibrary.Student)DataGrid.SelectedItem;
+                Edit formEdit = new Edit(selectedStudent);
                 formEdit.Show();
                 Close();
             }
