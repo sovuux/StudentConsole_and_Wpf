@@ -19,12 +19,12 @@ namespace TableCreate
             string row = "|";
             foreach (string column in columns)
             {
-                row += AlignCentre(column, width) + "|";
+                row += ListAlignCentre(column, width) + "|";
             }
             Console.WriteLine(row);
         }
 
-        static public string AlignCentre(string text, int width)           
+        static public string ListAlignCentre(string text, int width)           
         {
             text = text.Length > width ? text.Substring(0, width - 3) + "..." : text;
             if (string.IsNullOrWhiteSpace(text))

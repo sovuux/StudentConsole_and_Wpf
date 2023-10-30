@@ -81,6 +81,5 @@ namespace Student.Interface
             MainWindow.Show();
             Close();
         }
-
     }
 }

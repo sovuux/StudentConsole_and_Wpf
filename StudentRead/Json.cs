@@ -14,23 +14,23 @@ namespace StudentJson
     {
         private static string pathTo = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName, "ListText.json");
 
-        static public bool ReadJson(out List<Student> Persons)
+        static public bool ReadJson(out List<Student> Students)
         {
             string flag = File.ReadAllText(pathTo).Trim();
             if (flag != "")
             {
-                Persons = JsonSerializer.Deserialize<List<Student>>(File.ReadAllText(pathTo));
+                Students = JsonSerializer.Deserialize<List<Student>>(File.ReadAllText(pathTo));
                 return true;
             }
             else
             {
-                Persons = null;
+                Students = null;
                 return false;
             }
         }
-        static public void WriteJson(List<Student> Persons)
+        static public void WriteJson(List<Student> Students)
         {
-            string jsonString = JsonSerializer.Serialize(Persons, Options());
+            string jsonString = JsonSerializer.Serialize(Students, Options());
             File.WriteAllText(pathTo, jsonString);
         }
         static JsonSerializerOptions Options()

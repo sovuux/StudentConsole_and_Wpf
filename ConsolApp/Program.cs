@@ -25,9 +25,9 @@ internal class Program
     static void PrintMenu()
     {
         Console.WriteLine("Введите:\n1) Вывести список (изменить запись)\n2) Добавить запись\n3) Удалить запись\n4) Выйти\n");
-        var mc = Convert.ToChar(Console.ReadLine());
+        var menuIndex = Convert.ToChar(Console.ReadLine());
         Console.Clear();
-        switch (mc)
+        switch (menuIndex)
         {
             case '1':
                 {
@@ -36,12 +36,12 @@ internal class Program
                 }
             case '2':
                 {
-                    Add();
+                    ListAdd();
                     break;
                 }
             case '3':
                 {
-                    Delete();
+                    ListDelete();
                     break;
                 }
 
@@ -49,7 +49,7 @@ internal class Program
                 {
                     Console.WriteLine("Выполняется выход из программы...");
                     Console.Clear();
-                    System.Environment.Exit(0);
+                    Environment.Exit(0);
                     break;
                 }
             default:
@@ -63,13 +63,13 @@ internal class Program
     }
     static void ListText()
     {
-        if (Json.ReadJson(out List<Student> Persons))
+        if (Json.ReadJson(out List<Student> Students))
         {
             Console.WindowWidth = 200;
-            ListPrint(Persons);
+            ListPrint(Students);
             Console.WriteLine();
-            ListEdit(Persons);
-            Json.WriteJson(Persons);
+            ListEdit(Students);
+            Json.WriteJson(Students);
             Console.Clear();
             PrintMenu();
         }
@@ -81,17 +81,17 @@ internal class Program
             ListText();
         }
     }
-    static void ListPrint(List<Student> Persons)
+    static void ListPrint(List<Student> Students)
     {
-        int i = 1;
+        int index = 1;
         Console.Clear();
         Table.PrintLine();
         Table.PrintRow("Номер", "Имя", "Фамилия", "Отчество", "Город", "Почтовый индекс", "Улица", "Почта", "Телефон", "Курс", "Факультет", "Группа", "Специальность");
         Table.PrintLine();
-        foreach (var item in Persons)
+        foreach (var item in Students)
         {
-            Table.PrintRow($"{i}", $"{item.Fio.Name}", $"{item.Fio.Surname}", $"{item.Fio.Patron}", $"{item.Address.City}", $"{item.Address.PstIndex}", $"{item.Address.Street}", $"{item.Contacts.Mail}", $"{item.Contacts.Phone}", $"{item.Curriculum.Course}", $"{item.Curriculum.Faculty}", $"{item.Curriculum.Group}", $"{item.Curriculum.Specialty}");
-            i++;
+            Table.PrintRow($"{index}", $"{item.Fio.Name}", $"{item.Fio.Surname}", $"{item.Fio.Patron}", $"{item.Address.City}", $"{item.Address.PstIndex}", $"{item.Address.Street}", $"{item.Contacts.Mail}", $"{item.Contacts.Phone}", $"{item.Curriculum.Course}", $"{item.Curriculum.Faculty}", $"{item.Curriculum.Group}", $"{item.Curriculum.Specialty}");
+            index++;
         }
         Table.PrintLine();
     }
@@ -100,57 +100,57 @@ internal class Program
         Console.WriteLine($"Введите {add}:\n");
         return Console.ReadLine();
     }
-    static void ListEdit(List<Student> persons)
+    static void ListEdit(List<Student> Students)
     {
         Console.WriteLine("\n\nХотите изменить запись?(1 - да, 2 - выход в главное меню)");
-        var editor = Console.ReadLine();
-        if (editor == "1")
+        var questionForEdit = Console.ReadLine();
+        if (questionForEdit == "1")
         {
             Console.WriteLine("Введите номер записи, которую хотите изменить:");
-            string? IdString = Console.ReadLine();
-            if (int.TryParse(IdString, out int Id) && Id <= persons.Count)
+            string? idString = Console.ReadLine();
+            if (int.TryParse(idString, out int Id) && Id <= Students.Count)
             {
                 Id--;
                 Console.WriteLine("Что вы хотите изменить:\n1)ФИО\n2)Город\n3)Почтовый индекс\n4)Улицу\n5)Почту\n6)Телефон\n7)Факультет\n8)Курс\n9)Группу\n10)Специальность\n");
-                string t = Console.ReadLine();
-                switch (t)
+                string editIndex = Console.ReadLine();
+                switch (editIndex)
                 {
                     case "1":
-                        persons[Id].Fio.Surname = SetLibPersonValues("Фамилия");
-                        persons[Id].Fio.Name = SetLibPersonValues("Имя");
-                        persons[Id].Fio.Patron = SetLibPersonValues("Отчество");
+                        Students[Id].Fio.Surname = SetLibPersonValues("Фамилия");
+                        Students[Id].Fio.Name = SetLibPersonValues("Имя");
+                        Students[Id].Fio.Patron = SetLibPersonValues("Отчество");
                         break;
                     case "2":
-                        persons[Id].Address.City = SetLibPersonValues("Город");
+                        Students[Id].Address.City = SetLibPersonValues("Город");
                         break;
                     case "3":
-                        persons[Id].Address.PstIndex = SetLibPersonValues("Почтовый индекс");
+                        Students[Id].Address.PstIndex = SetLibPersonValues("Почтовый индекс");
                         break;
                     case "4":
-                        persons[Id].Address.Street = SetLibPersonValues("Улица");
+                        Students[Id].Address.Street = SetLibPersonValues("Улица");
                         break;
                     case "5":
-                        persons[Id].Contacts.Mail = SetLibPersonValues("Почта");
+                        Students[Id].Contacts.Mail = SetLibPersonValues("Почта");
                         break;
                     case "6":
-                        persons[Id].Contacts.Phone = SetLibPersonValues("Телефон");
+                        Students[Id].Contacts.Phone = SetLibPersonValues("Телефон");
                         break;
                     case "7":
-                        persons[Id].Curriculum.Faculty = SetLibPersonValues("Факультет");
+                        Students[Id].Curriculum.Faculty = SetLibPersonValues("Факультет");
                         break;
                     case "8":
-                        persons[Id].Curriculum.Course = SetLibPersonValues("Курс");
+                        Students[Id].Curriculum.Course = SetLibPersonValues("Курс");
                         break;
                     case "9":
-                        persons[Id].Curriculum.Group = SetLibPersonValues("Группа");
+                        Students[Id].Curriculum.Group = SetLibPersonValues("Группа");
                         break;
                     case "10":
-                        persons[Id].Curriculum.Specialty = SetLibPersonValues("Специальность");
+                        Students[Id].Curriculum.Specialty = SetLibPersonValues("Специальность");
                         break;
                     default:
                         Console.WriteLine("Введен неправильный символ!");
                         Console.ReadKey();
-                        ListEdit(persons);
+                        ListEdit(Students);
                         break;
                 }
             }
@@ -160,23 +160,23 @@ internal class Program
                 ListText();
             }
         }
-        if (editor == "2")
+        if (questionForEdit == "2")
         {
             Console.Clear();
             PrintMenu();
         }
-        if (editor != "1" && editor != "2")
+        if (questionForEdit != "1" && questionForEdit != "2")
         {
             Console.WriteLine("Вы ввели неправильный символ!");
-            ListEdit(persons);
+            ListEdit(Students);
         }
     }
 
-    static void Add()
+    static void ListAdd()
     {
         if (Json.ReadJson(out List<Student> Persons))
         {
-            SetPerson();
+            SetStudents();
             Console.Clear();
             PrintMenu();
         }
@@ -185,9 +185,9 @@ internal class Program
             Console.WriteLine("Не удалось найти файл!");
         }
     }
-    static void SetPerson()
+    static void SetStudents()
     {
-        if (Json.ReadJson(out List<Student> Persons))
+        if (Json.ReadJson(out List<Student> Students))
         {
             Student Person = new Student();
             Console.WriteLine("Введите ФИО:\n Имя");
@@ -215,33 +215,33 @@ internal class Program
             Console.WriteLine("Введите специальность:");
             Person.Curriculum.Specialty = Console.ReadLine();
             Console.Clear();
-            Persons.Add(Person);
-            Json.WriteJson(Persons);
+            Students.Add(Person);
+            Json.WriteJson(Students);
         }
         else
         {
             Console.WriteLine("Файл пуст!");
         }
     }
-    static void Delete()
+    static void ListDelete()
     {
-        if (Json.ReadJson(out List<Student> Persons))
+        if (Json.ReadJson(out List<Student> Students))
         {
-            ListPrint(Persons);
+            ListPrint(Students);
             Console.WriteLine("\nВведите номер записи, которую необзодимо удалить");
-            string numberString = Console.ReadLine();
-            if (int.TryParse(numberString, out int number))
+            string idString = Console.ReadLine();
+            if (int.TryParse(idString, out int number))
             {
                 Console.Clear();
-                Persons.RemoveAll(x => Persons.IndexOf(x) == number - 1);
-                Json.WriteJson(Persons);
+                Students.RemoveAll(id => Students.IndexOf(id) == number - 1);
+                Json.WriteJson(Students);
                 PrintMenu();
             }
             else
             {
                 Console.WriteLine("Вы ввели не число!");
                 Console.Clear();
-                Delete();
+                ListDelete();
             }
         }
         else
