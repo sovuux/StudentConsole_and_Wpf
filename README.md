@@ -1,1 +1,1 @@
-# StudentConsoleandWpf
+# StudentConsoleAndWpf
